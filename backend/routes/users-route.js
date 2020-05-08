@@ -19,12 +19,22 @@ router.get("/:id?", (req, res) => {
 });
 //post code for users
 router.post("/", (req, res) => {
-    // if (req.body.name){
-        content="Hello "+req.body.name;
-    // }else {
-    //     content = "<h2>api home from post</h2";
-    // }
-    res.send(content);
-})
+    htmlBody = req.body;
+    if (htmlBody.name && htmlBody.phone_no){
+        newUser = new User({
+            name:htmlBody.name,
+            phone_no:htmlBody.phone_no
+        });
+        newUser.save((err) => {
+            if(err) {
+                res.send("Error saving user:"+err);
+            }else {
+                res.send("User saved succesfully");
+            }
+        });
+    }else {
+        res.send("Not enough data to add user");
+    }
+});
 
 module.exports = router;

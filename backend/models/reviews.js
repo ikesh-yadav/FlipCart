@@ -1,10 +1,6 @@
 const mongoose =require("mongoose");
 
 const ReviewScheme = mongoose.Schema({
-    _id:{
-        type:mongoose.Types.ObjectId,
-        required:false
-    },
     user_id:{
         type:Number,
         required:true

@@ -1,17 +1,18 @@
 const mongoose = require("mongoose");
 
 const UserSchema = mongoose.Schema({
-    _id:{
-        type:mongoose.Types.ObjectId,
-        required:true 
-    },
-    first_name:{
-        type:String,
-        required:true
-    },
-    last_name:{
-        type:String,
-        required:true
+    name:{
+        type:{
+            first:{
+                type:String,
+                required:true
+            },
+            last:{
+                type:String,
+                required:true
+            },
+        },
+        required:false
     },
     phone_no:{
         type:{country_code:String,number:Number},
@@ -34,6 +35,11 @@ const UserSchema = mongoose.Schema({
         required:false
     },
     access:{
+        type:String,
+        required:false,
+        default:"customer"
+    },
+    email:{
         type:String,
         required:false
     }
