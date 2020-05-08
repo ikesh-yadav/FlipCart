@@ -10,7 +10,7 @@ const UserSchema = mongoose.Schema({
             last:{
                 type:String,
                 required:true
-            },
+            }
         },
         required:false
     },

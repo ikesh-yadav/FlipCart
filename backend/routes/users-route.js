@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const bodyparser = require("body-parser")
 
 //import models
 const User = require("../models/users");
@@ -36,5 +37,22 @@ router.post("/", (req, res) => {
         res.send("Not enough data to add user");
     }
 });
+
+//delete user code
+router.delete("/", (req, res) => {
+    if(req.body.id) {
+        User.deleteOne({_id:req.body.id}, (err, result) => {
+            if(err){
+                res.send("Error deleting user:"+err);
+            }else{
+                if(result["n"] == 0) {
+                    res.send("User doesnt exist or wromg id");
+                }else {
+                    res.send("User deleted succesfully");
+                }
+            }
+        });
+    }
+})
 
 module.exports = router;
