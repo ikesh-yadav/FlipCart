@@ -44,12 +44,22 @@ router.get("/products/:id", (req, res) => {
 
 //post code for products
 router.post("/", (req, res) => {
-    // if (req.body.name){
-        content="Hello "+req.body.name;
-    // }else {
-    //     content = "<h2>api home from post</h2";
-    // }
-    res.send(content);
+    let newReview = new Reviews({
+        user_id:req.body.user_id,
+        product_id:req.body.product_id,
+        stars:req.body.stars    
+    });
+    if (req.body.review) {
+            newReview.review = req.body.review;
+    }
+    newReview.save((err, contact) => {
+        if(err) {
+            res.json({status:"Failed",msg:err});
+        }else {
+            res.json({status:"sucess", msg:"Contact addded succesfully"});
+        }
+    })
+    content="Hello "+req.body.name;
 });
 
 //delete code for products
