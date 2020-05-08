@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const UserSchema = mongoose.Schema({
     _id:{
-        type:Number,
+        type:mongoose.Types.ObjectId,
         required:true 
     },
     first_name:{
@@ -14,23 +14,23 @@ const UserSchema = mongoose.Schema({
         required:true
     },
     phone_no:{
-        type:[{type:String,type:Number}],
+        type:{country_code:String,number:Number},
         required:true
     },
     cart:{
-        type:[{type:Number}],
+        type:[Number],
         required:false
     },
     wishlist:{
-        type:[{type:Number}],
+        type:[Number],
         required:false
     },
     recently_viewed:{
-        type:[{type:Number}],
+        type:[Number],
         required:false
     },
     addresses:{
-        type:[{type:String}],
+        type:[{line_1:String,line_2:String}],
         required:false
     },
     access:{

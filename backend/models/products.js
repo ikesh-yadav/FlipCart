@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const ProductSchema = mongoose.Schema({
     _id:{
-        type:Number,
+        type:mongoose.Types.ObjectId,
         required:true 
     },
     name:{

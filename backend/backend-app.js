@@ -16,7 +16,7 @@ const reviews_route = require("./routes/reviews-route");
 
 
 //connect to mongo
-mongoose.connect("mongodb://localhost:27017/FlipCart");
+mongoose.connect("mongodb://localhost:27017/FlipCart", { useNewUrlParser: true,  useUnifiedTopology: true  });
 
 mongoose.connection.on("connected", () => {
     console.log("Connected to mongodb at port 27017");

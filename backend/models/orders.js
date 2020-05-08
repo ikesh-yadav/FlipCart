@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const OrderSchema = mongoose.Schema({
     _id:{
-        type:Number,
-        required:true 
+        type:mongoose.Types.ObjectId,
+        required:false 
     },
     items:{
         type:[{type:Number}],
