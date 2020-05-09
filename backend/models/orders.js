@@ -19,7 +19,8 @@ const OrderSchema = mongoose.Schema({
     },
     order_date:{
         type:Date,
-        required:false
+        required:false,
+        default:Date.now()
     },
     delivery_date:{
         type:Date,

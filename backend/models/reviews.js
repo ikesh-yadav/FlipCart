@@ -10,7 +10,7 @@ const ReviewScheme = mongoose.Schema({
         required:true
     },
     review:{
-        type:String,
+        type:{title:String, description:String},
         required:false
     },
     stars:{

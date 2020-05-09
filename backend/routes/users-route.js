@@ -1,28 +1,26 @@
 const express = require("express");
 const router = express.Router();
-const bodyparser = require("body-parser")
 
 //import models
-const User = require("../models/users");
+const Users = require("../models/users");
 
-//get code for users
+//get code for retriving one user with matching id or all users
 router.get("/:id?", (req, res) => {
     if (req.params.id ){
-        User.find({_id:req.params.id},(err, users ) => {
+        Users.find({_id:req.params.id},(err, users ) => {
             res.json(users);
         });
     }else {
-        User.find((err, users ) => {
+        Users.find((err, users ) => {
             res.json(users);
         });
     }
-    //res.send(content);
 });
-//post code for users
+//post code for adding users
 router.post("/", (req, res) => {
     htmlBody = req.body;
     if (htmlBody.name && htmlBody.phone_no){
-        newUser = new User({
+        newUser = new Users({
             name:htmlBody.name,
             phone_no:htmlBody.phone_no
         });
@@ -30,7 +28,7 @@ router.post("/", (req, res) => {
             if(err) {
                 res.send("Error saving user:"+err);
             }else {
-                res.send("User saved succesfully");
+                res.send("Users saved succesfully");
             }
         });
     }else {
@@ -38,20 +36,66 @@ router.post("/", (req, res) => {
     }
 });
 
-//delete user code
-router.delete("/", (req, res) => {
+//code for deleting a user
+router.delete("/delete", (req, res) => {
     if(req.body.id) {
-        User.deleteOne({_id:req.body.id}, (err, result) => {
+        Users.deleteOne({_id:req.body.id}, (err, result) => {
             if(err){
                 res.send("Error deleting user:"+err);
             }else{
                 if(result["n"] == 0) {
-                    res.send("User doesnt exist or wromg id");
+                    res.send("Users doesnt exist or wromg id");
                 }else {
-                    res.send("User deleted succesfully");
+                    res.send("Users deleted succesfully");
                 }
             }
         });
+    }else {
+        res.send("id not included in htmlbody");
+    }
+})
+//code to update user data
+router.post("/update", (req,res) => {
+    htmlBody = req.body;
+    if(htmlBody.id){
+        update = {}
+        if (htmlBody.name) {
+            update.name = htmlBody.name;
+        }
+        if (htmlBody.phone_no) {
+            update.phone_no = htmlBody.phone_no;
+        }
+        if (htmlBody.cart) {
+            update.cart = htmlBody.cart;
+        }
+        if (htmlBody.wishlist) {
+            update.wishlist = htmlBody.wishlist;
+        }
+        if (htmlBody.addresses) {
+            update.addresses = htmlBody.addresses;
+        }
+        if (htmlBody.recently_viewed) {
+            update.recently_viewed = htmlBody.recently_viewed;
+        }
+        if (htmlBody.email) {
+            update.email = htmlBody.email
+        }
+
+        Users.findOneAndUpdate(
+            {_id:htmlBody.id},
+            update,        
+            (err, result) => {
+            if(err) res.send(err);
+            else{
+                if(result["n"] == 0) {
+                    res.send("Update unsuccesfull");
+                }else {
+                    res.send("Users updated");
+                }
+            }
+        });
+    }else {
+        res.send("id not included in htmlbody");
     }
 })
 

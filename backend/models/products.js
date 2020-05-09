@@ -19,7 +19,7 @@ const ProductSchema = mongoose.Schema({
     },
     sold_by:{
         type:Number,
-        required:false
+        required:true
     }
 });
 
