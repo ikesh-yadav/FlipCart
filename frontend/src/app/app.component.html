@@ -1,0 +1,32 @@
+<!-- <app-cart></app-cart>
+<app-home></app-home>
+<app-products></app-products>
+<app-sidebar></app-sidebar>
+<app-register-user></app-register-user>
+<app-about></app-about> -->
+
+<div class="row">
+  <div class="col-md-2">
+    <br>
+    <br>
+    <br>
+    <div class="custom-sidebar">
+      <div *ngFor="let item of listItems">
+        <a href="{{item.link}}" *ngIf="item.isNew!==true">{{item.name}}</a>
+        <a href="{{item.link}}" target="blank" *ngIf="item.isNew===true">{{item.name}}</a>
+      </div>
+      <hr>
+      <!-- <div class="add-component-container">
+        <input type="text" class="form-control" [(ngModel)]="title" placeholder="Type Title">
+        <input type="text" class="form-control" [(ngModel)]="url" placeholder="Type url like www.google.com">
+        <div class="col-md-10 offset-md-1">
+          <button class="btn btn-primary btn-block" (click)="add(title,url)">Add Link</button>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <div class="col-md-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
