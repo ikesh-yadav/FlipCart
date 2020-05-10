@@ -16,7 +16,7 @@ router.get("/:id?", (req, res) => {
         });
     }
 });
-//to get review related to a user
+//to get reviews related to a user
 router.get("/users/:id", (req, res) => {
     if (req.params.id ){
         Reviews.find({user_id:req.params.id}, (err, reviews ) => {
@@ -29,7 +29,7 @@ router.get("/users/:id", (req, res) => {
     }
 });
 
-//to get review related to a product
+//to get reviews related to a review
 router.get("/products/:id", (req, res) => {
     if (req.params.id ){
         console.log("debug"+req.params.id);
@@ -43,7 +43,7 @@ router.get("/products/:id", (req, res) => {
     }
 });
 
-//post code for products
+//post code for adding reviews
 router.post("/", (req, res) => {
     htmlBody = req.body;
     if (htmlBody.user_id && htmlBody.product_id && htmlBody.stars){
@@ -67,8 +67,8 @@ router.post("/", (req, res) => {
     }
 });
 
-//delete code for products
-router.delete("/delete/:id", (req, res ) => {
+//delete code for review
+router.delete("/delete", (req, res ) => {
     if(req.body.id) {
         Reviews.deleteOne({_id:req.body.id}, (err, result) => {
             if(err){

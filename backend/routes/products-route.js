@@ -68,9 +68,9 @@ router.post("/update", (req,res) => {
         if (htmlBody.category) {
             update.category = htmlBody.category;
         }
-        if (htmlBody.sold_by) {
-            update.sold_by = htmlBody.sold_by;
-        }
+        // if (htmlBody.sold_by) {
+        //     update.sold_by = htmlBody.sold_by;
+        // }//you shouldn't be able to update sold_by
         if (htmlBody.hightlights) {
             update.hightlights = htmlBody.hightlights;
         }
