@@ -82,12 +82,13 @@ router.post("/update", (req,res) => {
             update.delivery_date = htmlBody.delivery_date;
         }
 
-        Products.findOneAndUpdate(
+        Products.updateOne(
             {_id:htmlBody.id},
             update,        
             (err, result) => {
             if(err) res.send(err);
             else{
+                // res.json(result);
                 if(result["n"] == 0) {
                     res.send("Update unsuccesfull");
                 }else {

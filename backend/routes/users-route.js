@@ -83,15 +83,17 @@ router.post("/update", (req,res) => {
 
         Users.findOneAndUpdate(
             {_id:htmlBody.id},
-            update,        
+            update,
+            {new:true},        
             (err, result) => {
-            if(err) res.send(err);
-            else{
-                if(result["n"] == 0) {
-                    res.send("Update unsuccesfull");
-                }else {
-                    res.send("Users updated");
-                }
+                if(err) res.send(err);
+                else{
+                    // res.json(result);
+                    if(result["n"] == 0) {
+                        res.send("Update unsuccesfull");
+                    }else {
+                        res.send("Users updated");
+                    }
             }
         });
     }else {

@@ -105,6 +105,7 @@ router.post("/update", (req,res) => {
             (err, result) => {
             if(err) res.send(err);
             else{
+                // res.json(result);
                 if(result["n"] == 0) {
                     res.send("Update unsuccesfull");
                 }else {
