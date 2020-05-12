@@ -16,10 +16,10 @@ const reviews_route = require("./routes/reviews-route");
 
 
 //connect to mongo
-mongoose.connect("mongodb+srv://ikesh:ikesh@cluster0-kqrxx.gcp.mongodb.net/FlipCart?retryWrites=true&w=majority", { useNewUrlParser: true,  useUnifiedTopology: true  });
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://ikesh:ikesh@cluster0-kqrxx.gcp.mongodb.net/FlipCart?retryWrites=true&w=majority", { useNewUrlParser: true,  useUnifiedTopology: true  });
 
 mongoose.connection.on("connected", () => {
-    console.log("Connected to mongodb at port 27017");
+    console.log("Connected to mongodb atlas at port 27017");
 });
 
 mongoose.connection.on("error", (err) => {
@@ -36,14 +36,15 @@ app.use(bodyparser.json());
 
 //static files
 
+
 //port number
-const port = 3000;
+const port = process.env.PORT || git3000 ;
 
 //use the sepcified route
-app.use("/api/users/",users_route);
-app.use("/api/products/",products_route);
-app.use("/api/orders/",orders_route);
-app.use("/api/reviews/",reviews_route);
+app.use("/api/users",users_route);
+app.use("/api/products",products_route);
+app.use("/api/orders",orders_route);
+app.use("/api/reviews",reviews_route);
 
 
 app.get("/", (req,res) => {
@@ -51,5 +52,5 @@ app.get("/", (req,res) => {
 })
 
 app.listen(port, () => {
-    console.log("Server started at: "+port)
+    console.log("Server started at port: "+port)
 })
