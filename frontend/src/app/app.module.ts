@@ -12,6 +12,7 @@ import { HttpModule } from '@angular/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
+//import { WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md'
 //import { HttpClientModule } from '@angular/common/http';
 
 import { routes } from './app.router';
@@ -22,9 +23,9 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
-import { Products2Component } from './products2/products2.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SliderComponent } from './slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +35,8 @@ import { Products2Component } from './products2/products2.component';
     HomeComponent,
     ProductsComponent,
     CartComponent,
-    SidebarComponent,
     HeaderComponent,
-    Products2Component
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +53,7 @@ import { Products2Component } from './products2/products2.component';
     routes,
     FlexLayoutModule,
     MatToolbarModule,
+    NgbModule,
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy}

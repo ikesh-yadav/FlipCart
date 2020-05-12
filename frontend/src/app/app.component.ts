@@ -24,14 +24,6 @@ export class AppComponent implements OnInit, OnDestroy {
 				name: "Products",
 				link: "#/products"
       },
-      {
-				name: "Products2",
-				link: "#/products2"
-      },
-			{
-				name: "Cart",
-				link: "#/cart"
-			},
 			{
 				name: "About",
 				link: "#/about"
@@ -40,6 +32,10 @@ export class AppComponent implements OnInit, OnDestroy {
 				name: "Login",
 				link: "#/register-user"
       },
+      {
+				name: "Cart",
+				link: "#/cart"
+			},
 		];
   }
 
