@@ -1,0 +1,178 @@
+<html>
+    <head></head>
+    <body>
+        <h1>API documentation</h1>
+        <ul id="data"></ul>
+        <ul>
+            <li>Users:-
+                <ul>
+                <li>Get
+                    <ul>
+                        <li>URL/api/users
+                            <ul> -to retrieve all users</ul>
+                        </li>
+                        <li>URL/api/users/id           
+                            <ul>-to retrieve user with _id=id</ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Post
+                    <ul>
+                        <li>URL/api/users
+                            <ul>-to add a user send the required fields in html body</ul>
+                        </li>
+                        <li>URL/api/users/update
+                            <ul>
+                                <li>-to update a user's data, you can update
+                                    <ul>
+                                        <li>--name</li>
+                                        <li>--phone_no</li>
+                                        <li>--cart</li>
+                                        <li>--wishlist</li>
+                                        <li>--recently visited</li>
+                                        <li>--addresses</li>
+                                        <li>--email</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Delete
+                    <ul>
+                        <li>URL/api/users/delete
+                            <ul>-to delete a user with _id, send id in html body with fieldname id</ul>
+                        </li>
+                    </ul>
+                </li>
+                </ul>
+            </li>
+            <li>Products:-
+                <ul>
+                    <li>Get
+                        <ul>
+                            <li>URL/api/products
+                                <ul>-to retrieve all products </ul>
+                            </li>
+                            <li>URL/api/products/id
+                                <ul>-to retrieve product with _id=id</ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Post
+                        <ul>
+                            <li>URL/api/products
+                                <ul>-to add a product send the required fields in html body</ul>
+                            </li>
+                            <li>URL/api/products/update
+                                <ul>
+                                    <li>-to update a product's data, you can update
+                                        <ul>
+                                            <li>--name</li>
+                                            <li>--category</li>
+                                            <li>--sold_by</li>
+                                            <li>--highlights</li>
+                                            <li>--full_details</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Delete
+                        <ul>
+                            <li>URL/api/products/delete
+                                <ul>-to delete a product with _id, send id in html body with fieldname id</ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Orders:-
+                <ul>
+                    <li>Get
+                        <ul>
+                            <li>URL/api/orders
+                                <ul>-to retrieve all orders </ul>
+                            </li>
+                            <li>URL/api/orders/id
+                                <ul>-to retrieve order with _id=id</ul>
+                            </li>
+                            <li>URL/api/orders/users/id
+                                <ul>-to retrieve orders with user_id=id</ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Post
+                        <ul>
+                            <li>URL/api/orders
+                                <ul>-to add a order send the required fields in html body</ul>
+                            </li>
+                            <li>URL/api/orders/update
+                                <ul>
+                                    <li>-to update a order's data, you can update
+                                        <ul>
+                                            <li>--delivery_address</li>
+                                            <li>--delivery_date</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Delete
+                        <ul>
+                            <li>URL/api/orders/delete
+                                <ul>-to delete a order with _id, send id in html body with fieldname id</ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Reviews:-
+                <ul>
+                    <li>Get
+                        <ul>
+                            <li>URL/api/reviews
+                                <ul>-to retrieve all reviews </ul>
+                            </li>
+                            <li>URL/api/reviews/id
+                                <ul>-to retrieve reviews with _id=id</ul>
+                            </li>
+                            <li>URL/api/reviews/users/id
+                                <ul>-to retrieve reviews with user_id=id</ul>
+                            </li>
+                            <li>URL/api/reviews/products/id
+                                <ul>-to retrieve reviews with product_id=id</ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Post
+                        <ul>
+                            <li>URL/api/reviews
+                                <ul>-to add a review, send the required fields in html body</ul>
+                            </li>
+                            <li>URL/api/reviews/update
+                                <ul>
+                                    <li>-to update a review's data, you can update
+                                        <ul>
+                                            <li>--review</li>
+                                            <li>--stars</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Delete
+                        <ul>
+                            <li>URL/api/reviews/delete
+                                <ul> -to delete a review with _id, send id in html body with fieldname id</ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>   
+    </body>      
+</html>

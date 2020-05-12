@@ -38,7 +38,7 @@ app.use(bodyparser.json());
 
 
 //port number
-const port = process.env.PORT || git3000 ;
+const port = process.env.PORT || 3000 ;
 
 //use the sepcified route
 app.use("/api/users",users_route);
@@ -49,7 +49,11 @@ app.use("/api/reviews",reviews_route);
 
 app.get("/", (req,res) => {
     res.send("<h1>hello</h1>");
-})
+});
+
+app.get("/api", (req,res) => {
+    res.sendFile(path.join(__dirname,"/static/api-documentation.html"));
+});
 
 app.listen(port, () => {
     console.log("Server started at port: "+port)
