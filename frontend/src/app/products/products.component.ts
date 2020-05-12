@@ -10,13 +10,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductsComponent implements OnInit {
 
   products: any;
-  cartProducts: any;
+  cartProducts: any = [];
+  title:String = "Products";
+
 
   //constructor() { }
   constructor(private router: Router) { }
 
   ngOnInit() {
-    let data=localStorage.getItem('cart');
+    let data = localStorage.getItem('cart');
+
     if(data !== null){
       this.cartProducts = JSON.parse(data);
     } else {

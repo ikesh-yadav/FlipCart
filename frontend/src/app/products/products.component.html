@@ -1,6 +1,6 @@
 <div class="container row">
   <div class="col-md-2">
-    <h1>Products</h1>
+    <h1>{{ title }}</h1>
   </div>
   <div class="col-md-10 custom-products-cart-container">
     <div class="offset-md-8">
@@ -10,7 +10,7 @@
             <span class="glyicon glyphicon-shopping-cart">
               Products Added In Cart:
             </span>
-            <span class="caret">{{cartProducts.length}}</span>
+            <span class="caret">{{ cartProducts.length }}</span>
           </a>
           <ul class="dropdown-menu dropdown-cart" role="menu">
             <li *ngFor="let item of cartProducts">
