@@ -1,25 +1,3 @@
-
-
-<!-- <div class="row">
-  <div class="col-md-2">
-    <br>
-    <br>
-    <br>
-    <div class="custom-sidebar">
-      <div *ngFor="let item of listItems">
-        <a href="{{item.link}}" *ngIf="item.isNew!==true">{{item.name}}</a>
-        <a href="{{item.link}}" target="blank" *ngIf="item.isNew===true">{{item.name}}</a>
-      </div>
-      <hr>
-    </div>
-  </div>
-  <div class="col-md-10">
-    <router-outlet></router-outlet>
-  </div>
-</div> -->
-
-
-
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
@@ -33,7 +11,7 @@
         <span id="logo">FlipCart</span>
       </button>
       <div *ngIf="!deviceXs" class="buttons">
-        <a href="{{listItems[1].link}}" ><button mat-button (click)="listItems[1].link">Products</button></a>
+        <button mat-button>Products</button>
         <button mat-button>About</button>
         <button mat-button>Login</button>
       </div>
@@ -53,4 +31,3 @@
     <button mat-button>About Us</button>
   </mat-toolbar-row>
 </mat-toolbar>
-
