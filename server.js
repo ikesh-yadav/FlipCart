@@ -39,7 +39,7 @@ app.use('/', express.static(path.join(__dirname, 'static')));
 
 
 //port number
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000 ;
 
 //use the sepcified route
 app.use("/api/users/",users_route);
