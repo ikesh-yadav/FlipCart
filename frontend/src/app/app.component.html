@@ -33,7 +33,7 @@
         <span id="logo">FlipCart</span>
       </button>
       <div *ngIf="!deviceXs" class="buttons">
-        <a href="{{listItems[1].link}}" ><button mat-button (click)="listItems[1].link">Products</button></a>
+        <a mat-button href="{{listItems[1].link}}">Products</a>
         <button mat-button>About</button>
         <button mat-button>Login</button>
       </div>
@@ -53,4 +53,8 @@
     <button mat-button>About Us</button>
   </mat-toolbar-row>
 </mat-toolbar>
+
+<div class="col-md-10">
+  <router-outlet></router-outlet>
+</div>
 
