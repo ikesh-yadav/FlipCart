@@ -33,3 +33,8 @@
 .card-block {
   padding: 1.25rem;
 }
+
+img {
+  width: 150px;
+  height: 150px;
+}
