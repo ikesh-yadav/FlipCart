@@ -38,7 +38,7 @@ app.use(bodyparser.json());
 
 
 //port number
-const port = process.env.PORT || git3000 ;
+const port = process.env.PORT || 3000 ;
 
 //use the sepcified route
 app.use("/api/users",users_route);
