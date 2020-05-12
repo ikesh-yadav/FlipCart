@@ -16,10 +16,10 @@ const reviews_route = require("./routes/reviews-route");
 
 
 //connect to mongo
-mongoose.connect("mongodb://localhost:27017/FlipCart", { useNewUrlParser: true,  useUnifiedTopology: true  });
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://ikesh:ikesh@cluster0-kqrxx.gcp.mongodb.net/FlipCart?retryWrites=true&w=majority", { useNewUrlParser: true,  useUnifiedTopology: true  });
 
 mongoose.connection.on("connected", () => {
-    console.log("Connected to mongodb at port 27017");
+    console.log("Connected to mongodb atlas at port 27017");
 });
 
 mongoose.connection.on("error", (err) => {
@@ -35,9 +35,11 @@ app.use(cors());
 app.use(bodyparser.json());
 
 //static files
+app.use('/', express.static(path.join(__dirname, 'static')));
+
 
 //port number
-const port = 3000;
+const port = 3000 || process.env.PORT;
 
 //use the sepcified route
 app.use("/api/users/",users_route);
@@ -51,5 +53,5 @@ app.get("/", (req,res) => {
 })
 
 app.listen(port, () => {
-    console.log("Server started at: "+port)
+    console.log("Server started at port: "+port)
 })
