@@ -35,17 +35,16 @@ app.use(cors());
 app.use(bodyparser.json());
 
 //static files
-app.use('/', express.static(path.join(__dirname, 'static')));
 
 
 //port number
-const port = process.env.PORT || 3000 ;
+const port = process.env.PORT || git3000 ;
 
 //use the sepcified route
-app.use("/api/users/",users_route);
-app.use("/api/products/",products_route);
-app.use("/api/orders/",orders_route);
-app.use("/api/reviews/",reviews_route);
+app.use("/api/users",users_route);
+app.use("/api/products",products_route);
+app.use("/api/orders",orders_route);
+app.use("/api/reviews",reviews_route);
 
 
 app.get("/", (req,res) => {
