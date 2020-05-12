@@ -1,26 +1,20 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-root',
-//   templateUrl: './app.component.html',
-//   styleUrls: ['./app.component.css']
-// })
-// export class AppComponent {
-//   title = 'user-login-page';
-// }
-
-import { Component } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { MediaObserver, MediaChange } from "@angular/flex-layout";
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: "app-root",
 	templateUrl: "./app.component.html",
 	styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
-	title = "user-login-page";
+export class AppComponent implements OnInit, OnDestroy {
+
+  mediaSub:Subscription;
+  deviceXs:boolean;
+	title = "FlipCart";
 	url = "";
 	listItems: any;
-	constructor() {
+	constructor(public MediaObserver:MediaObserver) {
 		this.listItems = [
 			{
 				name: "Home",
@@ -29,7 +23,11 @@ export class AppComponent {
 			{
 				name: "Products",
 				link: "#/products"
-			},
+      },
+      {
+				name: "Products2",
+				link: "#/products2"
+      },
 			{
 				name: "Cart",
 				link: "#/cart"
@@ -43,7 +41,21 @@ export class AppComponent {
 				link: "#/register-user"
       },
 		];
-	}
+  }
+
+  ngOnInit() {
+    this.mediaSub = this.MediaObserver.media$.subscribe(
+      (result:MediaChange)=>{
+        console.log(result.mqAlias);
+        this.deviceXs = result.mqAlias === 'xs' ? true:false;
+      }
+    )
+  }
+
+  ngOnDestroy() {
+    this.mediaSub.unsubscribe();
+  }
+
 	add(title, url) {
 		if (title !== "" && url !== "") {
 			url = "http://" + url;
