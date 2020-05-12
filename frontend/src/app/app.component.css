@@ -1,21 +1,10 @@
-/* .custom-sidebar {
-  padding: 10px;
-}
-
-.add-component-container input {
-  width: 100%;
-  margin: 10px;
-}
-
-.add-component-container div {
-  margin-top: 10px;
-} */
 
 .header{
   background-color: rgb(4, 123, 213);
   color: rgb(255,225,53);
-  margin: 1%;
   border-radius: 5px;
+  width: 98%;
+  margin: 1%;
 }
 
 #logo {
@@ -30,4 +19,8 @@
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  color: rgb(255, 184, 66);
 }
