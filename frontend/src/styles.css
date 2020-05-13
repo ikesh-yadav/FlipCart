@@ -13,3 +13,37 @@ body {
 .pointer {
   cursor: pointer;
 }
+
+.loader {
+  border: 16px solid rgb(238, 209, 44);
+  border-radius: 50%;
+  border-top:16px dotted rgb(4, 123, 213);
+  border-bottom:16px double rgb(4, 123, 213);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mat-card {
+  width: 30%;
+  margin: 15% auto;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.mat-card h2 {
+  padding: 0px 5px;
+  font-family: 'Ubuntu', sans-serif;
+  color: rgb(4, 123, 213);
+}
