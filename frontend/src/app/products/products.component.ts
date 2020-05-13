@@ -28,6 +28,69 @@ export class ProductsComponent implements OnInit {
 
     this.products = [
       {
+        id:10,
+        title: "Airpods",
+        description: "Apple Airpods premium music experience",
+        img:"assets/airpods.png",
+        price:399
+      },
+      {
+        id:10,
+        title: "Boats Earphones",
+        description: "Great music experience",
+        img:"assets/beats-earphones.png",
+        price:99
+      },
+      {
+        id:11,
+        title: "SS Bat",
+        description: "Cricket bat",
+        img:"assets/cricket-bat.png",
+        price:199
+      },
+      {
+        id:12,
+        title: "Nivia Football",
+        description: "Become Messi",
+        img:"assets/football.png",
+        price:50
+      },
+      {
+        id:13,
+        title: "Headphones",
+        description: "BoomBoom Ciao",
+        img:"assets/headphones.png",
+        price:38
+      },
+      {
+        id:14,
+        title: "Macbook Pro",
+        description: "Apple's premium Laptop",
+        img:"assets/macbook.png",
+        price:499
+      },
+      {
+        id:15,
+        title: "Mask",
+        description: "Protects you from Covid",
+        img:"assets/mask.png",
+        price:38
+      },
+      {
+        id:16,
+        title: "Oneplus 6",
+        description: "Premium Smartphone",
+        img:"assets/oneplus-6.png",
+        price:287
+      },
+      {
+        id:17,
+        title: "Playstation",
+        description: "PS4 Gaming",
+        img:"assets/playstation.png",
+        price:389
+      },
+      {
         id: 1,
         title: "Americano",
         description: "Americano",
@@ -89,7 +152,9 @@ export class ProductsComponent implements OnInit {
         description: "12oz macchiato",
         img:"assets/noun_1014669_cc.png",
         price:3
-      }
+      },
+
+
     ]
   }
 

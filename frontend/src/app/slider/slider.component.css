@@ -1,0 +1,22 @@
+img {
+  width: 90% ;
+  height: 450px;
+  /* filter: drop-shadow(0 0 5px rgb(60, 60, 233)); */
+  border-radius: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.carousel {
+  border-radius: 20px;
+  filter: drop-shadow(0 0 8px rgb(100, 100, 100));
+}
+
+h3, p {
+  font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black;
+  font-style: italic;
+  font-weight: 500;
+  text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-register-user',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterUserComponent implements OnInit {
 
+  xs:boolean;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.deviceXs);
+  }
+
+  @Input() deviceXs: boolean;
+
+  isdeviceXs() {
+    this.xs = this.deviceXs;
+    return this.deviceXs;
+
   }
 
 }

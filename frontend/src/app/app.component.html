@@ -1,60 +1,64 @@
-
-
-<!-- <div class="row">
-  <div class="col-md-2">
-    <br>
-    <br>
-    <br>
-    <div class="custom-sidebar">
-      <div *ngFor="let item of listItems">
-        <a href="{{item.link}}" *ngIf="item.isNew!==true">{{item.name}}</a>
-        <a href="{{item.link}}" target="blank" *ngIf="item.isNew===true">{{item.name}}</a>
-      </div>
-      <hr>
-    </div>
-  </div>
-  <div class="col-md-10">
-    <router-outlet></router-outlet>
-  </div>
-</div> -->
-
-
-
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<mat-toolbar class="header">
-  <mat-toolbar-row fxLayoutAlign="space-between center">
-    <div fxLayout="row">
-      <button mat-button >
-        <mat-icon>home</mat-icon>
-        <span id="logo">FlipCart</span>
-      </button>
-      <div *ngIf="!deviceXs" class="buttons">
+<body>
+  <div class="holder" fxLayout="column" fxFlexFill>
+    <div>
+    <mat-toolbar class="header">
+
+      <mat-toolbar-row fxLayoutAlign="space-between center">
+        <div fxLayout="row">
+          <a href="{{listItems[0].link}}">
+            <button mat-button >
+              <mat-icon>home</mat-icon>
+              <span id="logo">FlipCart</span>
+            </button>
+          </a>
+          <div *ngIf="!deviceXs" class="buttons">
+            <a mat-button href="{{listItems[1].link}}">Products</a>
+            <a mat-button href="{{listItems[2].link}}">About</a>
+            <a mat-button href="{{listItems[3].link}}">Login</a>
+          </div>
+        </div>
+        <div class="menu buttons">
+          <a href="{{listItems[4].link}}">
+            <button mat-icon-button >
+              <mat-icon>shopping_cart</mat-icon>
+              <span *ngIf="!deviceXs">Cart</span>
+            </button>
+          </a>
+        </div>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-around center" class="buttons">
         <a mat-button href="{{listItems[1].link}}">Products</a>
-        <button mat-button>About</button>
-        <button mat-button>Login</button>
-      </div>
-    </div>
-    <div class="menu buttons">
-      <button mat-icon-button >
-        <mat-icon>shopping_cart</mat-icon>
-        <span *ngIf="!deviceXs">Cart</span>
-      </button>
+        <a mat-button href="{{listItems[2].link}}">About</a>
+        <a mat-button href="{{listItems[3].link}}">Login</a>
+      </mat-toolbar-row>
+    </mat-toolbar>
     </div>
 
-  </mat-toolbar-row>
+    <div class="col-md-10" id="body" fxFlex>
+      <router-outlet></router-outlet>
+    </div>
 
-  <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-around center" class="buttons">
-    <button mat-button>Products</button>
-    <button mat-button>Contact Us</button>
-    <button mat-button>About Us</button>
-  </mat-toolbar-row>
-</mat-toolbar>
-
-<div class="col-md-10">
-  <router-outlet></router-outlet>
-</div>
-
+    <div id="footer">
+      <section id="lab_social_icon_footer">
+        <div class="container">
+            <div class="text-center center-block">
+                <a href="https://www.facebook.com/himandagdi"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                <a href="https://twitter.com/himandagdi"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                <a href="https://www.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                <a href="mailto:dagdih12@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+            </div>
+            <span id="span">
+              Made with <i class="fa fa-heart pulse"></i> using <a href="https://angular.io/docs" target="_blank">Angular</a>
+          </span>
+        </div>
+        </section>
+    </div>
+  </div>
+</body>
