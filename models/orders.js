@@ -25,6 +25,10 @@ const OrderSchema = mongoose.Schema({
     delivery_date:{
         type:Date,
         required:false
+    },
+    items_price:{
+        type:[Number],
+        required:true
     }
 });
 

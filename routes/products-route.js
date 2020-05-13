@@ -77,6 +77,9 @@ router.post("/update", (req,res) => {
         if (htmlBody.full_details) {
             update.full_details = htmlBody.full_details;
         }
+        if (htmlBody.price) {
+            update.price = htmlBody.price;
+        }
 
         Products.findOneAndUpdate(
             {_id:htmlBody.id},

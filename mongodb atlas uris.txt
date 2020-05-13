@@ -1,0 +1,6 @@
+java:-mongodb+srv://ikesh:ikesh@cluster0-kqrxx.gcp.mongodb.net/FlipCart?retryWrites=true&w=majority
+
+
+compass:-mongodb+srv://ikesh:ikesh@cluster0-kqrxx.gcp.mongodb.net/FlipCart
+
+app:- mongodb+srv://ikesh:<password>@cluster0-kqrxx.gcp.mongodb.net/FlipCart?retryWrites=true&w=majority
