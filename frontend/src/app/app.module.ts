@@ -12,6 +12,7 @@ import { HttpModule } from '@angular/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 //import { WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md'
 //import { HttpClientModule } from '@angular/common/http';
 
@@ -26,6 +27,7 @@ import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SliderComponent } from './slider/slider.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { SliderComponent } from './slider/slider.component';
     CartComponent,
     HeaderComponent,
     SliderComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { SliderComponent } from './slider/slider.component';
     FlexLayoutModule,
     MatToolbarModule,
     NgbModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy}

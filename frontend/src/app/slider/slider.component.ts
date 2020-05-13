@@ -11,7 +11,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap'
 export class SliderComponent implements OnInit {
 
   constructor(config: NgbCarouselConfig, private router: Router) {
-    config.interval = 2000;
+    config.interval = 3500;
     config.wrap = true;
     config.keyboard = true;
     config.pauseOnHover = false;
