@@ -3,9 +3,9 @@ collections
 		first_name:String,
 		last_name:string,
 		phone_no:{country_code:String,number:Number},
-		cart:Number[],
-		wishlist:Number[],
-		recently_viewed:Number[],
+		cart:ObjectId[],
+		wishlist:ObjectId[],
+		recently_viewed:ObjectId[],
 		address:[{line_1:String, line_2:String}]
 		access:String
 		
@@ -15,12 +15,12 @@ collections
 		category:String[],
 		highlights:String[],
 		full_details:String,
-		Sold_by	:Number,
-		price:Number[]	
+		Sold_by:ObjectId,
+		price:Number	
 	}
 	orders:{
-		items:Number[],
-		user_id:Number,
+		items:ObjectId[],
+		user_id:ObjectId,
 		delivery_address:String,
 		status:String,
 		order_date:DateTime,
@@ -28,10 +28,16 @@ collections
 		items_price:Number[]
 	}
 	Reviews:{
-		user_id:Number,
-		product_id:Number,
+		user_id:ObjectId,
+		product_id:ObjectId,
 		review:{title:String,description:sting},
 		Stars:Number
+	}
+	passwords:{
+		user_id:ObjectId,
+		email:String,
+		salt:String,
+		hash:String
 	}
 
 

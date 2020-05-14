@@ -18,7 +18,7 @@ const ProductSchema = mongoose.Schema({
         required:false
     },
     sold_by:{
-        type:Number,
+        type:String,
         required:true
     },
     price:{

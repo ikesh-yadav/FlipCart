@@ -174,6 +174,36 @@
                     </li>
                 </ul>
             </li>
+            <li>Passwords:-
+                <ul>
+                    <li>Post
+                        <ul>
+                            <li>URL/api/passwords
+                                <ul>-to add a password, send the required fields in html body</ul>
+                            </li>
+                            <li>URL/api/passwords/check
+                                <ul>-to check a password, send the required fields(email and hash) in html body will return a json object with status</ul>
+                            </li>
+                            <li>URL/api/passwords/update
+                                <ul>
+                                    <li>-to update a password's data, you can update
+                                        <ul>
+                                            <li>--hash</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Delete
+                        <ul>
+                            <li>URL/api/passwords/delete
+                                <ul> -to delete a password with email, send email in html body with fieldname email</ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>   
     </body>      
 </html>

@@ -6,7 +6,7 @@ const OrderSchema = mongoose.Schema({
         required:true
     },
     user_id:{
-        type:Number,
+        type:String,
         required:true
     },
     delivery_address:{

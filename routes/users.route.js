@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //import models
-const Users = require("../models/users");
+const Users = require("../models/users.model");
 
 //get code for retriving one user with matching id or all users
 router.get("/:id?", (req, res) => {

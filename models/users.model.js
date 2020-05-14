@@ -16,18 +16,24 @@ const UserSchema = mongoose.Schema({
     },
     phone_no:{
         type:{country_code:String,number:Number},
-        required:true
+        required:true,
+        unique:true
+    },
+    email:{
+        type:String,
+        required:false,
+        unique:true
     },
     cart:{
-        type:[Number],
+        type:[String],
         required:false
     },
     wishlist:{
-        type:[Number],
+        type:[String],
         required:false
     },
     recently_viewed:{
-        type:[Number],
+        type:[String],
         required:false
     },
     addresses:{
@@ -38,10 +44,6 @@ const UserSchema = mongoose.Schema({
         type:String,
         required:false,
         default:"customer"
-    },
-    email:{
-        type:String,
-        required:false
     }
 });
 

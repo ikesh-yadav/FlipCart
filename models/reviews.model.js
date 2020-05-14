@@ -2,11 +2,11 @@ const mongoose =require("mongoose");
 
 const ReviewScheme = mongoose.Schema({
     user_id:{
-        type:Number,
+        type:String,
         required:true
     },
     product_id:{
-        type:Number,
+        type:String,
         required:true
     },
     review:{

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //import models
-const Products = require("../models/products");
+const Products = require("../models/products.model");
 
 //get code for retriving one product with matching id or all products
 router.get("/:id?", (req, res) => {
