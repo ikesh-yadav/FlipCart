@@ -44,7 +44,6 @@ router.post("/", (req, res) => {
     }else {
         return res.status(501).json({message: 'Error registering user.'});
     }
-    })
 });
 
 //code for deleting a user
