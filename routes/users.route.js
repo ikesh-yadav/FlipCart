@@ -17,7 +17,7 @@ router.get("/:id?", (req, res) => {
     }else {
         Users.find((err, users ) => {
             if(err){
-                res.status(501).send(message:err);
+                res.status(501).send({message:err});
             }else{
                 res.status(201).json(users);
             }
