@@ -30,7 +30,9 @@ mongoose.connection.on("error", (err) => {
 });
 
 //adding middleware-cors
-app.use(cors());
+app.use(cors({
+    origin:'http://localhost:4200'
+}));
 
 //adding middware-body-parse
 app.use(bodyparser.json());
