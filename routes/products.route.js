@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //import models
-const Products = require("../models/products");
+const Products = require("../models/products.model");
 
 //get code for retriving one product with matching id or all products
 router.get("/:id?", (req, res) => {
@@ -76,6 +76,9 @@ router.post("/update", (req,res) => {
         }
         if (htmlBody.full_details) {
             update.full_details = htmlBody.full_details;
+        }
+        if (htmlBody.price) {
+            update.price = htmlBody.price;
         }
 
         Products.findOneAndUpdate(

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //import models
-const Reviews = require("../models/reviews");
+const Reviews = require("../models/reviews.model");
 
 //get code for reviews
 router.get("/:id?", (req, res) => {

@@ -40,7 +40,8 @@
             "--category",
             "--sold_by",
             "--highlights",
-            "--full_details"]}}
+            "--full_details",
+            "--price"]}}
         ],
         "Delete":[
             {"URL/api/products/delete":

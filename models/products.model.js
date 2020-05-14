@@ -18,6 +18,10 @@ const ProductSchema = mongoose.Schema({
         required:false
     },
     sold_by:{
+        type:String,
+        required:true
+    },
+    price:{
         type:Number,
         required:true
     }

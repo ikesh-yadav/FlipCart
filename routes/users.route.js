@@ -2,16 +2,24 @@ const express = require("express");
 const router = express.Router();
 
 //import models
-const Users = require("../models/users");
+const Users = require("../models/users.model");
 
 //get code for retriving one user with matching id or all users
 router.get("/:id?", (req, res) => {
     if (req.params.id ){
-        Users.find({_id:req.params.id},(err, users ) => {
+        Users.findOne({_id:req.params.id},(err, users ) => {
             res.json(users);
         });
     }else {
         Users.find((err, users ) => {
+            res.json(users);
+        });
+    }
+});
+//get code for retriving one user with matching id or all users
+router.get("/email/:email", (req, res) => {
+    if ( req.params.email ){
+        Users.findOne({email:req.params.email},(err, users ) => {
             res.json(users);
         });
     }

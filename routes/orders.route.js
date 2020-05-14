@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //import models
-const Orders = require("../models/orders");
+const Orders = require("../models/orders.model");
 
 //get code for orders
 router.get("/:id?", (req, res) => {

@@ -1,0 +1,58 @@
+collections
+	users:{
+		first_name:String,
+		last_name:string,
+		phone_no:{country_code:String,number:Number},
+		cart:ObjectId[],
+		wishlist:ObjectId[],
+		recently_viewed:ObjectId[],
+		address:[{line_1:String, line_2:String}]
+		access:String
+		
+	}
+	products:{
+		name:String,
+		category:String[],
+		highlights:String[],
+		full_details:String,
+		Sold_by:ObjectId,
+		price:Number	
+	}
+	orders:{
+		items:ObjectId[],
+		user_id:ObjectId,
+		delivery_address:String,
+		status:String,
+		order_date:DateTime,
+		Delivery_date:DateTime,
+		items_price:Number[]
+	}
+	Reviews:{
+		user_id:ObjectId,
+		product_id:ObjectId,
+		review:{title:String,description:sting},
+		Stars:Number
+	}
+	passwords:{
+		user_id:ObjectId,
+		email:String,
+		salt:String,
+		hash:String
+	}
+
+
+
+
+temporary insert
+/** 
+{
+  "first_name":"ikesh",
+  "last_name":"yadav",
+  "phone_no":{"country_code":"+91","number":"9999999999"},
+  "cart":[],
+  "wishlist":[],
+  "recently_viewed":[],
+  "address":[{"line_1":"hell"}],
+  "access":"admin"
+}
+*/
