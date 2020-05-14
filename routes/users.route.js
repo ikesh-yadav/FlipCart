@@ -7,7 +7,7 @@ const Users = require("../models/users.model");
 //get code for retriving one user with matching id or all users
 router.get("/:id?", (req, res) => {
     if (req.params.id ){
-        Users.find({_id:req.params.id},(err, users ) => {
+        Users.findOne({_id:req.params.id},(err, users ) => {
             res.json(users);
         });
     }else {
@@ -17,7 +17,7 @@ router.get("/:id?", (req, res) => {
     }
 });
 //get code for retriving one user with matching id or all users
-router.get("/:email", (req, res) => {
+router.get("/email/:email", (req, res) => {
     if ( req.params.email ){
         Users.findOne({email:req.params.email},(err, users ) => {
             res.json(users);
