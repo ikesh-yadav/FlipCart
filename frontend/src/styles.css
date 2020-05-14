@@ -21,6 +21,8 @@ body {
   border-bottom:16px double rgb(4, 123, 213);
   width: 120px;
   height: 120px;
+  max-width: 120px;
+  max-height: 120px;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   width: 30%;

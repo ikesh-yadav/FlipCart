@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="col-12">
-    <ngb-carousel class="carousel" >
+    <ngb-carousel *ngIf="!deviceXs" class="pc-carousel" >
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
           <img src="assets/banner1.jpg" alt="Random first slide">
@@ -42,6 +42,47 @@
         </div>
       </ng-template>
     </ngb-carousel>
+
+    <ngb-carousel *ngIf="deviceXs" class="mobile-carousel" >
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="assets/banner3.jpg" alt="Random first slide">
+        </div>
+        <div class="carousel-caption">
+          <button class="btn btn-primary" (click)="viewProducts()">View Products</button>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="assets/banner4.jpg" alt="Random second slide">
+        </div>
+        <div class="carousel-caption">
+          <button class="btn btn-primary" (click)="viewProducts()">View Products</button>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="assets/banner1.jpg" alt="Random third slide">
+        </div>
+        <div class="carousel-caption">
+          <button class="btn btn-primary" (click)="viewProducts()">View Products</button>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="assets/banner2.jpg" alt="Random second slide">
+        </div>
+        <div class="carousel-caption">
+          <button class="btn btn-primary" (click)="viewProducts()">View Products</button>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <div *ngIf="deviceXs" class="mobile">
+    <div style="width:100%;height:0;padding-bottom:54%;position:relative;">
+      <iframe src="https://giphy.com/embed/Ejn6xH5mnmtMI" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+    </div>
 
   </div>
 </div>

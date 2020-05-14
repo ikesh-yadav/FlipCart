@@ -3,7 +3,7 @@
 </div>
 <hr>
 <br>
-<div class="carts-body-container row">
+<!-- <div class="carts-body-container row">
   <div class="cart-product-container container row" *ngFor="let item of cartProducts; let i=index">
     <div class="col-md-5">
       <img [src]="item.img" alt="" class="custom-image-style">
@@ -19,18 +19,61 @@
       <a class="text-danger" (click)="removeItem(i)"><strong>X</strong></a>
     </div>
   </div>
-</div>
-
-<div class="container row" *ngIf="!cartProducts.length">
-  <div class="col-md-4 offset-md-4">No Item In Cart</div>
-</div>
+</div> -->
 
 <div class="bill-container">
-  <div class="col-md-4 offset-md-2">
-    <button class="btn btn-success btn-lg pull-left" (click)="payBill()">Pay Bill</button>
+    <button
+        mat-raised-button
+        class="checkout-button btn btn-success btn-lg pull-left"
+        (click) = "payBill()">
+        <svg-icon src="../../assets/email.svg" [svgStyle]="{ 'width.px':24, 'height.px':24  }"></svg-icon>
+        Checkout :
+        <span *ngIf="!cartProducts.length"><strong>Rs 0</strong></span>
+        <span *ngIf="cartProducts.length"><strong>Rs {{bill}}</strong></span>
+    </button>
+</div>
+
+
+  <div>
+  <div class="cart-product-container container row" *ngFor="let item of cartProducts; let i=index">
+    <mat-card class="col-md-5">
+      <img [src]="item.img" alt="" class="custom-image-style">
+    </mat-card>
+    <mat-card class="cart-product-desc col-md-3">
+      <div><p>{{item.title}}</p></div>
+      <div><p><strong>Rs {{item.price*item.qt}}</strong></p></div>
+    </mat-card>
+    <mat-card class="edit-cart-container col-md-2">
+      <!-- <span><p>Quantity :</p></span><br> -->
+      <div><p>Quantity:</p></div>
+      <input (change)="updateTotal()" [(ngModel)]="item.qt" type="number" class="form-control">
+    </mat-card>
+
+    <button
+      mat-raised-button
+      color="primary"
+      class="login-button"
+      (click) = "removeItem(i)">
+      <svg-icon src="../../assets/delete.svg" [svgStyle]="{ 'width.px':24, 'height.px':24  }"></svg-icon>
+      Delete
+    </button>
+
+
   </div>
-  <div class="col-md-4">
-    <span *ngIf="!cartProducts.length"><strong>$0</strong></span>
-    <span *ngIf="cartProducts.length"><strong>${{bill}}</strong></span>
-  </div>
+</div>
+
+<mat-card class="mat-elevation-z12 container row" *ngIf="!cartProducts.length">
+  <div class="col-md-4 offset-md-4">No Item In Cart</div>
+</mat-card>
+
+<div class="bill-container">
+  <button
+      mat-raised-button
+      class="checkout-button btn btn-success btn-lg pull-left"
+      (click) = "payBill()">
+      <svg-icon src="../../assets/email.svg" [svgStyle]="{ 'width.px':24, 'height.px':24  }"></svg-icon>
+      Checkout :
+      <span *ngIf="!cartProducts.length"><strong>Rs 0</strong></span>
+      <span *ngIf="cartProducts.length"><strong>Rs {{bill}}</strong></span>
+  </button>
 </div>

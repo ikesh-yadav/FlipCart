@@ -19,4 +19,15 @@ export class MyserviceService {
       );
   }
 
+  submitLogin(body:any) {
+    return this._http
+      .post(
+        'https://flipcart-meanapp.herokuapp.com/api/passwords/check',
+        body,
+        {
+          observe: 'body'
+        }
+      );
+  }
+
 }

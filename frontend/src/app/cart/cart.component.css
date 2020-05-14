@@ -5,6 +5,8 @@
 
 .cart-product-container {
   display:flex;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .cart-product-container img {
@@ -38,4 +40,19 @@ input {
 #xbutton {
   height:30px;
   padding-top:45px;
+}
+
+.login-button {
+  margin-top: 20px;
+  display: block;
+  width: 40%;
+  margin: 20px auto;
+}
+
+.checkout-button {
+  margin-top: 20px;
+  display: block;
+  width: 60%;
+  margin: 20px auto;
+  font-size: larger;
 }

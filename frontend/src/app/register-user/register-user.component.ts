@@ -11,8 +11,9 @@ import { HttpClient } from '@angular/common/http';
 export class RegisterUserComponent implements OnInit {
 
   successMessage : string = "";
-  // successMessage : boolean = false;
+  loginSuccessMessage : string = "";
   myForm: FormGroup;
+  myLoginForm: FormGroup;
 
   constructor(private _myservice:MyserviceService, private _http: HttpClient) {
     this.myForm = new FormGroup({
@@ -27,6 +28,11 @@ export class RegisterUserComponent implements OnInit {
     .subscribe(
       x => this.myForm.controls.cnfpass.updateValueAndValidity()
     );
+
+    this.myLoginForm = new FormGroup({
+      email : new FormControl(null, Validators.email),
+      password : new FormControl(null, Validators.required),
+    });
 
    }
 
@@ -60,7 +66,6 @@ export class RegisterUserComponent implements OnInit {
 
   register() {
     console.log(this.myForm.value);
-
     this._myservice.submitRegister(this.myForm.value)
     .subscribe(
         (data) => {
@@ -83,6 +88,15 @@ export class RegisterUserComponent implements OnInit {
           observe: 'body'
         }
       );
+  }
+
+  login() {
+    console.log(this.myLoginForm.value);
+    this._myservice.submitLogin(this.myLoginForm.value)
+    .subscribe(
+        (data) => this.loginSuccessMessage = "SUCCESSFUL LOGIN :)",
+        (error) => this.loginSuccessMessage = "FAILURE :(",
+    );
   }
 
 }

@@ -15,6 +15,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { routes } from './app.router';
 import { AppComponent } from './app.component';
@@ -59,7 +60,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
     MatToolbarModule,
     NgbModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularSvgIconModule.forRoot()
   ],
   providers: [ MyserviceService,
     {provide: LocationStrategy, useClass: HashLocationStrategy}

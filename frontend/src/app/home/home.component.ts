@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 declare var jQuery: any;
 
@@ -15,8 +15,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     jQuery('.carousel').carousel({
       interval: 2000
-    })
+    });
+    console.log(this.deviceXs);
   }
+
+  @Input() deviceXs: boolean;
 
   viewProducts() {
     this.router.navigate(['/products']);
