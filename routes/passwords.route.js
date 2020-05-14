@@ -36,7 +36,7 @@ router.post("/check", (req, res) => {
     if(htmlBody.email && htmlBody.hash){
         let checkDocument ={"email":htmlBody.email, "hash":htmlBody.hash};
     
-        Passwords.findOne(checkDocument).count((err, result) => {
+        Passwords.findOne(checkDocument).countDocuments((err, result) => {
             if(err) {
                 res.json({status:"error:",msg:err});
             }else {
