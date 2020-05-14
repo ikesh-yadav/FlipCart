@@ -16,6 +16,14 @@ router.get("/:id?", (req, res) => {
         });
     }
 });
+//get code for retriving one user with matching id or all users
+router.get("/:email", (req, res) => {
+    if ( req.params.email ){
+        Users.findOne({email:req.params.email},(err, users ) => {
+            res.json(users);
+        });
+    }
+});
 //post code for adding users
 router.post("/", (req, res) => {
     htmlBody = req.body;
