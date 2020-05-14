@@ -15,7 +15,7 @@ router.post("/", (req, res) => {
     if ( htmlBody.email && htmlBody.password ){
         let newPassword = new Passwords({
             email:req.body.email,
-            pasword:req.body.pasword,    
+            password:req.body.password,    
         });
 
         newPassword.save((err, result) => {
