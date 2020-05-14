@@ -13,32 +13,26 @@
 } */
 
 
-.mobile {
+.mobile , .pc {
   top: 0;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   display: block;
-  background-color: rgb(218, 118, 78);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .pc {
-  top: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
   background-color: rgb(94, 218, 78);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
+}
+
+.mobile {
+  background-color: rgb(218, 118, 78);
 }
 
 
@@ -64,3 +58,8 @@ mat-card-content {
   margin: 20px auto;
 }
 
+span {
+  font-size: 0.75rem;
+  color: firebrick;
+  padding-left: 50px;
+}

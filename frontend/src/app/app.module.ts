@@ -1,6 +1,7 @@
+import { MyserviceService } from './myservice.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,8 +14,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-//import { WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md'
-//import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { routes } from './app.router';
 import { AppComponent } from './app.component';
@@ -45,6 +45,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatCardModule,
     MatTabsModule,
@@ -57,9 +58,10 @@ import { SpinnerComponent } from './spinner/spinner.component';
     FlexLayoutModule,
     MatToolbarModule,
     NgbModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule
   ],
-  providers: [
+  providers: [ MyserviceService,
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-<div [ngClass]="isdeviceXs ? 'mobile': 'pc'">
+<div [ngClass]="deviceXs ? 'mobile': 'pc'">
   <mat-card class="mat-elevation-z12">
     <mat-card-title style="text-align:center;">SignIn/SignUp</mat-card-title>
     <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
@@ -52,78 +52,88 @@
             </form>
           </mat-card-content>
       </mat-tab>
+
       <mat-tab label="Sign Up">
         <mat-card-content>
-          <form action="">
+          <form action="" [formGroup]="myForm" >
             <mat-form-field>
               <input
                 matInput
-                placeholder="User Name"
+                placeholder="First Name"
+                formControlName="first"
                 required
-                name="username"
+                name="first"
                 ngModel
-                #username="ngModel">
+              >
               <mat-icon matSuffix>perm_identity</mat-icon>
-              <mat-error
-                *ngIf="username.invalid">
-                Username is required
-              </mat-error>
-
             </mat-form-field>
+            <span *ngIf="isValid('first')">Can't be Null</span>
+
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Last Name"
+                formControlName="last"
+                required
+                name="last"
+                ngModel
+              >
+              <mat-icon matSuffix>perm_identity</mat-icon>
+            </mat-form-field>
+            <span *ngIf="isValid('last')">Can't be Null</span>
+
             <mat-form-field>
               <input
                 matInput
                 placeholder="Email"
+                formControlName="email"
                 required
                 name="email"
                 ngModel
-                #email="ngModel">
-                <mat-error *ngIf="email.invalid">Email is required</mat-error>
+              >
               <mat-icon matSuffix>email</mat-icon>
             </mat-form-field>
+            <span *ngIf="isValid('email')">Entered email is invalid</span>
+
             <mat-form-field>
               <input
                 matInput
                 placeholder="Password"
+                formControlName="password"
                 type="password"
                 required
                 minlength="6"
                 name="password"
                 ngModel
-                #password="ngModel">
-                <mat-error
-                  *ngIf="password.errors && password.errors.required">
-                  Password is required
-                </mat-error>
-                <mat-error
-                  *ngIf="password.errors && password.errors.minlength">
-                  Password must be of length 6
-                </mat-error>
+              >
               <mat-icon matSuffix>lock</mat-icon>
-
             </mat-form-field>
+            <span *ngIf="isValid('password')">Password requires atleast 6 char</span>
+
             <mat-form-field>
                 <input
-                matInput
-                placeholder="Password"
-                type="password"
-                required
-                minlength="6"
-                name="repassword"
-                ngModel
-                #repassword="ngModel">
-                <mat-error
-                  *ngIf="repassword.errors && repassword.errors.required">
-                  Re-Enter Password is required
-                </mat-error>
+                  matInput
+                  placeholder="Confirm Password"
+                  formControlName="cnfpass"
+                  type="password"
+                  required
+                  minlength="6"
+                  name="cnfpass"
+                  ngModel
+                >
               <mat-icon matSuffix>lock</mat-icon>
             </mat-form-field>
+            <span *ngIf="isValid('cnfpass')">Password and confirm password should match</span>
+
             <button
               mat-raised-button
               color="primary"
-              class="login-button">
+              class="login-button"
+              (click) = "register()">
               Sign Up
             </button>
+
+            {{successMessage}}
           </form>
         </mat-card-content>
       </mat-tab>
