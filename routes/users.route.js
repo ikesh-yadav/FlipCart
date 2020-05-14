@@ -27,7 +27,7 @@ router.get("/email/:email", (req, res) => {
 //post code for adding users
 router.post("/", (req, res) => {
     htmlBody = req.body;
-    if (htmlBody.first && htmlBody.last && htmlBody.phone_no){
+    if (htmlBody.first && htmlBody.last){
         newUser = new Users({
             name:htmlBody.name,
             phone_no:htmlBody.phone_no
