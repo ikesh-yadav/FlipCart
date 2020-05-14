@@ -8,11 +8,19 @@ const Reviews = require("../models/reviews.model");
 router.get("/:id?", (req, res) => {
     if (req.params.id ){
         Reviews.find({_id:req.params.id}, (err, reviews ) => {
-            res.json(reviews);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(reviews);                    
+            }
         });
     }else {
         Reviews.find((err, reviews ) => {
-            res.json(reviews);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(reviews);                    
+            }
         });
     }
 });
@@ -20,11 +28,19 @@ router.get("/:id?", (req, res) => {
 router.get("/users/:id", (req, res) => {
     if (req.params.id ){
         Reviews.find({user_id:req.params.id}, (err, reviews ) => {
-            res.json(reviews);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(reviews);                    
+            }
         });
     }else {
         Reviews.find((err, reviews ) => {
-            res.json(reviews);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(reviews);                    
+            }
         });
     }
 });
@@ -34,11 +50,19 @@ router.get("/products/:id", (req, res) => {
     if (req.params.id ){
         console.log("debug"+req.params.id);
         Reviews.find({product_id:req.params.id}, (err, reviews ) => {
-            res.json(reviews);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(reviews);                    
+            }
         });
     }else {
         Reviews.find((err, reviews ) => {
-            res.json(reviews);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(reviews);                    
+            }
         });
     }
 });
@@ -56,14 +80,14 @@ router.post("/", (req, res) => {
                 newReview.review = req.body.review;
         }
         newReview.save((err, result) => {
-            if(err) {
-                res.json({status:"failed",msg:err});
-            }else {
-                res.json({status:"sucess", msg:"Contact addded succesfully"});
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json({message:"Contact addded succesfully"});                    
             }
         });
     }else {
-        res.send("Not enough information to add review");
+        res.status(501).json({message:"Not enough information to add review"});
     }
 });
 
@@ -72,19 +96,18 @@ router.delete("/delete", (req, res ) => {
     if(req.body.id) {
         Reviews.deleteOne({_id:req.body.id}, (err, result) => {
             if(err){
-                res.send("Error deleting review:"+err);
+                res.status(501).json({message:err});
             }else{
                 if(result["n"] == 0) {
-                    res.send("review doesnt exist or wromg id");
+                    res.status(501).json({message:"Review doesnt exist or wromg id"});
                 }else {
-                    res.send("review deleted succesfully");
-                }
+                    res.status(201).json({message:"Review deleted succesfully"});      
+                }      
             }
         });
     }else {
-        res.send("id not included in htmlbody");
+        res.status(501).json({message:"id not included in htmlbody"});
     }
-
 });
 
 //update code for review
@@ -103,18 +126,18 @@ router.post("/update", (req,res) => {
             {_id:htmlBody.id},
             update,        
             (err, result) => {
-            if(err) res.send(err);
-            else{
-                // res.json(result);
-                if(result["n"] == 0) {
-                    res.send("Update unsuccesfull");
-                }else {
-                    res.send("review updated");
+                if(err){
+                    res.status(501).json({message:err});
+                }else{
+                    if(result["n"] == 0) {
+                        res.status(501).json({message:"Review doesnt exist or wromg id"});
+                    }else {
+                        res.status(201).json({message:"Review deleted succesfully"});      
+                    }      
                 }
-            }
         });
     }else {
-        res.send("id not included in htmlbody");
+        res.status(501).json({message:"id not included in htmlbody"});
     }
 });
 
