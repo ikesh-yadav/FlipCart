@@ -27,9 +27,11 @@ router.get("/email/:email", (req, res) => {
 //post code for adding users
 router.post("/", (req, res) => {
     htmlBody = req.body;
-    if (htmlBody.first && htmlBody.last){
+    if (htmlBody.first && htmlBody.last && htmlBody.email){
         newUser = new Users({
-            name:htmlBody.name,
+            first:htmlBody.first,
+            last:htmlBody.last,
+            email:htmlBody.email
             //phone_no:htmlBody.phone_no
         });
         let promise = newUser.save();
@@ -40,11 +42,11 @@ router.post("/", (req, res) => {
 
         promise.catch(function(err){
             if(err){
-                return res.status(501).json({message: 'Error registering user.'+err});
+                return res.status(501).json({message: 'Error registering user, Err:'+err});
             }
         });
     }else {
-        return res.status(501).json({message: 'Error registering user. noth enough data'});
+        return res.status(501).json({message: 'Error registering user, not enough data'});
     }
 });
 
