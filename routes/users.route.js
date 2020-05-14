@@ -39,7 +39,9 @@ router.post("/", (req, res) => {
         });
 
         promise.catch(function(err){
-            return res.status(501).json({message: 'Error registering user.'});
+            if(err){
+                return res.status(501).json({message: 'Error registering user.'});
+            }
         });
     }else {
         return res.status(501).json({message: 'Error registering user.'});
