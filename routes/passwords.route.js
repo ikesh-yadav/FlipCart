@@ -4,6 +4,11 @@ const router = express.Router();
 //import models
 const Passwords = require("../models/passwords.model");
 
+//dummy get code for passwords
+router.get("/", (req, res) => {
+    res.send("dummy get");
+});
+
 //post code for adding user Passwords
 router.post("/", (req, res) => {
     htmlBody = req.body;
@@ -35,9 +40,11 @@ router.post("/check", (req, res) => {
             if(err) {
                 res.json({status:"error:",msg:err});
             }else {
-                if(result['n'] == 1){
+                if(result == 1){
+                    // res.json(result);
                     res.json({status:"success", msg:"login successful"});
                 }else{
+                    // res.json(result);
                     res.json({status:"failed", msg:"login unsuccesfull"});
                 }
             }
