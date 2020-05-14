@@ -1,18 +1,13 @@
 const mongoose = require("mongoose");
 
 const UserSchema = mongoose.Schema({
-    name:{
-        type:{
-            first:{
-                type:String,
-                required:true
-            },
-            last:{
-                type:String,
-                required:true
-            }
-        },
-        required:false
+    first:{
+        type:String,
+        required:true
+    },
+    last:{
+        type:String,
+        required:true
     },
     phone_no:{
         type:{country_code:String,number:Number},
@@ -26,19 +21,23 @@ const UserSchema = mongoose.Schema({
     },
     cart:{
         type:[String],
-        required:false
+        required:false,
+        default:[]
     },
     wishlist:{
         type:[String],
-        required:false
+        required:false,
+        default:[]
     },
     recently_viewed:{
         type:[String],
-        required:false
+        required:false,
+        default:[]
     },
     addresses:{
         type:[{line_1:String,line_2:String}],
-        required:false
+        required:false,
+        default:[]
     },
     access:{
         type:String,
