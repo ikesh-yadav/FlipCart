@@ -40,11 +40,11 @@ router.post("/", (req, res) => {
 
         promise.catch(function(err){
             if(err){
-                return res.status(501).json({message: 'Error registering user.'});
+                return res.status(501).json({message: 'Error registering user.'+err});
             }
         });
     }else {
-        return res.status(501).json({message: 'Error registering user.'});
+        return res.status(501).json({message: 'Error registering user. noth enough data'});
     }
 });
 
