@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 //import models
 const Passwords = require("../models/passwords.model");
@@ -13,18 +15,25 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
     htmlBody = req.body;
     if ( htmlBody.email && htmlBody.password ){
-        let newPassword = new Passwords({
-            email:req.body.email,
-            password:req.body.password,    
-        });
-
-        newPassword.save((err, result) => {
+        bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
             if(err) {
                 res.status(501).json({message:err});
             }else {
-                res.status(201).json({message:"Contact addded succesfully"});
-            }
+                // Store hash in your password DB.
+                let newPassword = new Passwords({
+                    email:req.body.email,
+                    password:hash 
+                });
+                newPassword.save((err, result) => {
+                    if(err) {
+                        res.status(501).json({message:err});
+                    }else {
+                        res.status(201).json({message:"password addded succesfully"});
+                    }
+                });
+            }    
         });
+        
     }else {
         res.status(501).send({message:"Not enough information to add new Password"});
     }
@@ -34,18 +43,29 @@ router.post("/", (req, res) => {
 router.post("/check", (req, res) => {
     htmlBody = req.body;
     if(htmlBody.email && htmlBody.password){
-        let checkDocument ={"email":htmlBody.email, "password":htmlBody.password};
+        let checkDocument ={"email":htmlBody.email};
     
-        Passwords.findOne(checkDocument).countDocuments((err, result) => {
+        Passwords.findOne(checkDocument, (err, result) => {
             if(err) {
                 res.status(501).json({message:err});
             }else {
-                if(result == 1){
+                if(hash = result['password']){
+                    bcrypt.compare(htmlBody.password, hash, function(err, compareResult) {
+                        // result == true
+                        if(err) {
+                            res.status(501).json({message:err});
+                        }else {
+                            if(compareResult == true){
+                                res.status(201).json({ message:"login successful"});
+                            }else{
+                                res.status(501).json({message:"login unsuccesfull"});
+                            }
+                        }
+                    });
                     // res.json(result);
-                    res.status(201).json({ message:"login successful"});
                 }else{
                     // res.json(result);
-                    res.status(501).json({message:"login unsuccesfull"});
+                    res.status(501).json({message:"paassword not found in database"});
                 }
             }
         });
@@ -56,20 +76,20 @@ router.post("/check", (req, res) => {
 
 //delete code fonewPassword
 router.delete("/delete", (req, res ) => {
-    if(req.body.id) {
-        Passwords.deleteOne({_id:req.body.id}, (err, result) => {
+    if(req.body.email) {
+        Passwords.deleteOne({email:req.body.email}, (err, result) => {
             if(err){
-                res.send("Error deletinewPassword:"+err);
+                res.status(501).json({message:err});
             }else{
                 if(result["n"] == 0) {
-                    res.send("newPassword doesnt exist or wromg id");
+                    res.status(501).json({ message:"unable to delete passwprd record"});
                 }else {
-                    res.send("Password deleted succesfully");
+                    res.status(201).json({ message:"password record deleted"});
                 }
             }
         });
     }else {
-        res.send("id not included in htmlbody");
+        res.status(501).json({ message:"email not included in html body"});
     }
 
 });
@@ -77,28 +97,40 @@ router.delete("/delete", (req, res ) => {
 //update code fonewPassword
 router.post("/update", (req,res) => {
     htmlBody = req.body;
-    if(htmlBody.email){
+    if(htmlBody.email && htmlBody.password){
         update = {};
-        if (htmlBody.hash){
-            update["hash"] = htmlBody.hash;
-        }
-        
-        Passwords.findOneAndUpdate(
-            {email:htmlBody.email},
-            update,        
-            (err, result) => {
-            if(err) res.send(err);
-            else{
-                // res.json(result);
-                if(result["n"] == 0) {
-                    res.send("Update unsuccesfull");
-                }else {
-                    res.send("Password updated");
-                }
+        bcrypt.hash(htmlBody.password, saltRounds, (err, hash) => {
+            if(err) {
+                res.status(501).json({message:err});
+            }else {
+                // update hash in your password DB.
+                update["password"] = hash;
+
+                Passwords.findOneAndUpdate(
+                    {email:htmlBody.email},
+                    update,        
+                    (err, result) => {
+                        if(err) res.status(501).json({message:err});
+                        else{
+                            // res.json(result);
+                            if(result["n"] == 0) {
+                                res.status(501).send({message:"Update unsuccesfull"});
+                            }else {
+                                res.status(501).send({message:"Password updated"});
+                            }
+                        }
+                });
+                newPassword.save((err, result) => {
+                    if(err) {
+                        res.status(501).json({message:err});
+                    }else {
+                        res.status(201).json({message:"password addded succesfully"});
+                    }
+                });
             }
-        });
+        });        
     }else {
-        res.send("email not included in htmlbody");
+        res.status(501).send({message:"email or password not included in htmlbody"});
     }
 });
 

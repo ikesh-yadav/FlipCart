@@ -8,11 +8,19 @@ const Users = require("../models/users.model");
 router.get("/:id?", (req, res) => {
     if (req.params.id ){
         Users.findOne({_id:req.params.id},(err, users ) => {
-            res.json(users);
+            if(err){
+                res.status(501).send({message:err});
+            }else{
+                res.status(201).json(users);
+            }
         });
     }else {
         Users.find((err, users ) => {
-            res.json(users);
+            if(err){
+                res.status(501).send(message:err);
+            }else{
+                res.status(201).json(users);
+            }
         });
     }
 });
@@ -20,8 +28,14 @@ router.get("/:id?", (req, res) => {
 router.get("/email/:email", (req, res) => {
     if ( req.params.email ){
         Users.findOne({email:req.params.email},(err, users ) => {
-            res.json(users);
+            if(err){
+                res.status(501).send({message:err});
+            }else{
+                res.status(201).json(users);
+            }
         });
+    }else {
+        res.status(501).json({ message:"email not included in html body"});
     }
 });
 //post code for adding users
@@ -34,15 +48,11 @@ router.post("/", (req, res) => {
             email:htmlBody.email
             //phone_no:htmlBody.phone_no
         });
-        let promise = newUser.save();
-
-        promise.then(function(doc){
-            return res.status(201).json(doc);
-        });
-
-        promise.catch(function(err){
-            if(err){
-                return res.status(501).json({message: 'Error registering user, Err:'+err});
+        newUser.save((err, result) => {
+            if(err) {
+                res.status(501).json({message:err});
+            }else {
+                res.status(201).json({message:"user addded succesfully"});
             }
         });
     }else {
@@ -52,22 +62,23 @@ router.post("/", (req, res) => {
 
 //code for deleting a user
 router.delete("/delete", (req, res) => {
-    if(req.body.id) {
-        Users.deleteOne({_id:req.body.id}, (err, result) => {
+    if(req.body.email) {
+        Users.deleteOne({email:req.body.email}, (err, result) => {
             if(err){
-                res.send("Error deleting user:"+err);
+                res.status(501).json({message:err});
             }else{
                 if(result["n"] == 0) {
-                    res.send("Users doesnt exist or wromg id");
+                    res.status(501).json({ message:"Users doesnt exist or wromg id"});
                 }else {
-                    res.send("Users deleted succesfully");
+                    res.status(201).json({ message:"Users deleted succesfully"});                    
                 }
             }
         });
     }else {
-        res.send("id not included in htmlbody");
+        res.status(501).json({ message:"email not included in html body"});
     }
-})
+});
+
 //code to update user data
 router.post("/update", (req,res) => {
     htmlBody = req.body;
@@ -100,18 +111,18 @@ router.post("/update", (req,res) => {
             update,
             {new:true},        
             (err, result) => {
-                if(err) res.send(err);
-                else{
-                    // res.json(result);
+                if(err){
+                    res.status(501).json({message:err});
+                }else{
                     if(result["n"] == 0) {
-                        res.send("Update unsuccesfull");
+                        res.status(501).json({ message:"Users doesnt exist or wromg id"});
                     }else {
-                        res.send("Users updated");
+                        res.status(201).json({ message:"Users updated"});                    
                     }
-            }
+                }
         });
     }else {
-        res.send("id not included in htmlbody");
+        res.status(501).send({message:"id not included in htmlbody"});
     }
 })
 

@@ -8,11 +8,19 @@ const Orders = require("../models/orders.model");
 router.get("/:id?", (req, res) => {
     if (req.params.id ){
         Orders.find({_id:req.params.id}, (err, orders ) => {
-            res.json(orders);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(orders);                    
+            }
         });
     }else {
         Orders.find((err, orders ) => {
-            res.json(orders);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(orders);                    
+            }
         });
     }
 });
@@ -20,16 +28,24 @@ router.get("/:id?", (req, res) => {
 router.get("/users/:id", (req, res) => {
     if (req.params.id ){
         Orders.find({user_id:req.params.id}, (err, orders ) => {
-            res.json(orders);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(orders);                    
+            }
         });
     }else {
         Orders.find((err, orders ) => {
-            res.json(orders);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(orders);                    
+            }
         });
     }
 });
 
-//post code for orders to database
+//post code for adding orders to database
 router.post("/", (req, res) => {
     htmlBody = req.body;
     if (htmlBody.name && htmlBody.category && htmlBody.sold_by){
@@ -39,14 +55,14 @@ router.post("/", (req, res) => {
             delivery_address:htmlBody.delivery_address
         });
         newOrder.save((err) => {
-            if(err) {
-                res.send("Error saving Product:"+err);
-            }else {
-                res.send("Product saved succesfully");
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json({message:"order saved succesfully"});                    
             }
         });
     }else {
-        res.send("Not enough data to add Product");
+        res.status(501).send({message:"Not enough data to add Product"});
     }
 });
 
@@ -55,17 +71,17 @@ router.delete("/delete", (req, res) => {
     if(req.body.id) {
         Orders.deleteOne({_id:req.body.id}, (err, result) => {
             if(err){
-                res.send("Error deleting order:"+err);
+                res.status(501).json({message:err});
             }else{
                 if(result["n"] == 0) {
-                    res.send("order doesnt exist or wromg id");
+                    res.status(501).json({message:"Order doesnt exist or wromg id"});
                 }else {
-                    res.send("order deleted succesfully");
-                }
+                    res.status(201).json({message:"Order deleted succesfully"});      
+                }      
             }
         });
     }else {
-        res.send("id not included in htmlbody");
+        res.status(501).json({message:"id not included in htmlbody"});
     }
 })
 
@@ -86,19 +102,19 @@ router.post("/update", (req,res) => {
             {_id:htmlBody.id},
             update,        
             (err, result) => {
-            if(err) res.send(err);
-            else{
-                // res.json(result);
-                if(result["n"] == 0) {
-                    res.send("Update unsuccesfull");
-                }else {
-                    res.send("order updated");
+                if(err){
+                    res.status(501).json({message:err});
+                }else{
+                    if(result["n"] == 0) {
+                        res.status(501).json({message:"Review doesnt exist or wromg id"});
+                    }else {
+                        res.status(201).json({message:"Review updated succesfully"});      
+                    }      
                 }
-            }
-        });
-    }else {
-        res.send("id not included in htmlbody");
-    }
+            });
+        }else {
+            res.status(501).json({message:"id not included in htmlbody"});
+        }
 });
 
 

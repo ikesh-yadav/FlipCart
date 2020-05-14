@@ -8,11 +8,19 @@ const Products = require("../models/products.model");
 router.get("/:id?", (req, res) => {
     if (req.params.id ){
         Products.find({_id:req.params.id},(err, Products ) => {
-            res.json(Products);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(Products);                    
+            }
         });
     }else {
         Products.find((err, Products ) => {
-            res.json(Products);
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json(Products);                    
+            }
         });
     }
 });
@@ -26,14 +34,14 @@ router.post("/", (req, res) => {
             sold_by:htmlBody.sold_by
         });
         newProduct.save((err) => {
-            if(err) {
-                res.send("Error saving Product:"+err);
-            }else {
-                res.send("Product saved succesfully");
+            if(err){
+                res.status(501).json({message:err});
+            }else{
+                res.status(201).json({message:"Product saved succesfully"});                    
             }
         });
     }else {
-        res.send("Not enough data to add Product");
+        res.status(501).json({message:"Not enough data to add Product"});
     }
 });
 
@@ -42,17 +50,17 @@ router.delete("/delete", (req, res) => {
     if(req.body.id) {
         Products.deleteOne({_id:req.body.id}, (err, result) => {
             if(err){
-                res.send("Error deleting product:"+err);
+                res.status(501).json({message:err});
             }else{
                 if(result["n"] == 0) {
-                    res.send("Product doesnt exist or wromg id");
+                    res.status(501).json({message:"Product doesnt exist or wromg id"});
                 }else {
-                    res.send("Product deleted succesfully");
-                }
+                    res.status(201).json({message:"Product deleted succesfully"});      
+                }      
             }
         });
     }else {
-        res.send("id not included in htmlbody");
+        res.status(501).json({message:"id not included in htmlbody"});
     }
 })
 
@@ -85,18 +93,18 @@ router.post("/update", (req,res) => {
             {_id:htmlBody.id},
             update,        
             (err, result) => {
-            if(err) res.send(err);
-            else{
-                // res.json(result);
-                if(result["n"] == 0) {
-                    res.send("Update unsuccesfull");
-                }else {
-                    res.send("Product updated");
+                if(err){
+                    res.status(501).json({message:err});
+                }else{
+                    if(result["n"] == 0) {
+                        res.status(501).json({message:"Update unsuccesfull, Product doesnt exist or wromg id"});
+                    }else {
+                        res.status(201).json({message:"Product updated succesfully"});      
+                    }      
                 }
-            }
         });
     }else {
-        res.send("id not included in htmlbody");
+        res.status(501).json({message:"id not included in htmlbody"});
     }
-})
+});
 module.exports = router;
