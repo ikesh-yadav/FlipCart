@@ -30,9 +30,9 @@ router.post("/", (req, res) => {
     if (htmlBody.first && htmlBody.last){
         newUser = new Users({
             name:htmlBody.name,
-            phone_no:htmlBody.phone_no
+            //phone_no:htmlBody.phone_no
         });
-        let promise = user.save();
+        let promise = newUser.save();
 
         promise.then(function(doc){
             return res.status(201).json(doc);
