@@ -12,21 +12,21 @@ router.get("/", (req, res) => {
 //post code for adding user Passwords
 router.post("/", (req, res) => {
     htmlBody = req.body;
-    if (htmlBody.email && htmlBody.hash && htmlBody.salt){
+    if ( htmlBody.email && htmlBody.password ){
         let newPassword = new Passwords({
             email:req.body.email,
-            salt:req.body.salt,
-            hash:req.body.hash,    
+            pasword:req.body.pasword,    
         });
+
         newPassword.save((err, result) => {
             if(err) {
-                res.json({status:"failed",msg:err});
+                res.status(501).json({message:err});
             }else {
-                res.json({status:"sucess", msg:"Contact addded succesfully"});
+                res.status(201).json({message:"Contact addded succesfully"});
             }
         });
     }else {
-        res.send("Not enough information to add new Password");
+        res.status(501).send({message:"Not enough information to add new Password"});
     }
 });
 
