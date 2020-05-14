@@ -8,14 +8,16 @@ const PasswordScheme = mongoose.Schema({
     },
     salt:{
         type:String,
-        required:true
+        required:false
     },
-    hash:{
+    // hash:{
+    //     type:String,
+    //     required:true
+    // },
+    password:{
         type:String,
         required:true
     }
-
-
 });
 
 const passwords = module.exports = mongoose.model("passwords", PasswordScheme);

@@ -12,45 +12,45 @@ router.get("/", (req, res) => {
 //post code for adding user Passwords
 router.post("/", (req, res) => {
     htmlBody = req.body;
-    if (htmlBody.email && htmlBody.hash && htmlBody.salt){
+    if ( htmlBody.email && htmlBody.password ){
         let newPassword = new Passwords({
             email:req.body.email,
-            salt:req.body.salt,
-            hash:req.body.hash,    
+            password:req.body.password,    
         });
+
         newPassword.save((err, result) => {
             if(err) {
-                res.json({status:"failed",msg:err});
+                res.status(501).json({message:err});
             }else {
-                res.json({status:"sucess", msg:"Contact addded succesfully"});
+                res.status(201).json({message:"Contact addded succesfully"});
             }
         });
     }else {
-        res.send("Not enough information to add new Password");
+        res.status(501).send({message:"Not enough information to add new Password"});
     }
 });
 
 //post code for checking user Passwords
 router.post("/check", (req, res) => {
     htmlBody = req.body;
-    if(htmlBody.email && htmlBody.hash){
-        let checkDocument ={"email":htmlBody.email, "hash":htmlBody.hash};
+    if(htmlBody.email && htmlBody.password){
+        let checkDocument ={"email":htmlBody.email, "password":htmlBody.password};
     
         Passwords.findOne(checkDocument).countDocuments((err, result) => {
             if(err) {
-                res.json({status:"error:",msg:err});
+                res.status(501).json({message:err});
             }else {
                 if(result == 1){
                     // res.json(result);
-                    res.json({status:"success", msg:"login successful"});
+                    res.status(201).json({ message:"login successful"});
                 }else{
                     // res.json(result);
-                    res.json({status:"failed", msg:"login unsuccesfull"});
+                    res.status(501).json({message:"login unsuccesfull"});
                 }
             }
         });
     }else {
-        res.send("Not enough information to check Password");
+        res.status(501).send({message:"Not enough information to check Password"});
     }
 });
 
