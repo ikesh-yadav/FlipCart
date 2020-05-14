@@ -25,14 +25,18 @@
   background-size: cover;
   overflow: hidden;
   border-radius: 10px;
+  /* background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/5908/food.png);
+  background-size: 100%  ; */
 }
 
 .pc {
-  background-color: rgb(94, 218, 78);
+  /* background-color: rgb(94, 218, 78); */
+  background-color: rgb(218, 204, 78);
 }
 
 .mobile {
-  background-color: rgb(218, 118, 78);
+  /* background-color: rgb(218, 118, 78); */
+  background-color: rgb(218, 204, 78);
 }
 
 
@@ -41,6 +45,7 @@ mat-card {
   margin: 1% auto;
   width: 80%;
   border-radius: 8px;
+  max-width: 650px;
 }
 mat-form-field, mat-checkbox {
   width: 80%;

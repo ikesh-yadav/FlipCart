@@ -1,6 +1,7 @@
 import { MyserviceService } from './../myservice.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register-user',
@@ -10,9 +11,10 @@ import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/fo
 export class RegisterUserComponent implements OnInit {
 
   successMessage : string = "";
+  // successMessage : boolean = false;
   myForm: FormGroup;
 
-  constructor(private _myservice:MyserviceService) {
+  constructor(private _myservice:MyserviceService, private _http: HttpClient) {
     this.myForm = new FormGroup({
       first : new FormControl(null),
       last : new FormControl(null),
@@ -58,11 +60,29 @@ export class RegisterUserComponent implements OnInit {
 
   register() {
     console.log(this.myForm.value);
+
     this._myservice.submitRegister(this.myForm.value)
     .subscribe(
-      data => this.successMessage = "SUCCESSful registeration :)",
-      error => this.successMessage = "Error :(",
+        (data) => {
+          this.submitPswd(this.myForm.value)
+          .subscribe(
+            (data) => this.successMessage = "SUCCESSful Registeration :)",
+            (error) => this.successMessage = "Error creating password :(",
+          );
+        },
+        (error) => {this.successMessage = "Error creating user :(";},
     );
+  }
+
+  submitPswd(body:any) {
+    return this._http
+      .post(
+        'https://flipcart-meanapp.herokuapp.com/api/passwords',
+        body,
+        {
+          observe: 'body'
+        }
+      );
   }
 
 }
