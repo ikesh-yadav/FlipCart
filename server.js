@@ -38,6 +38,11 @@ app.use(cors({
 app.use(bodyparser.json());
 
 //static files
+// app.use(express.static('frontend/dist'));
+
+app.get("/api", (req,res) => {
+    res.sendFile(path.join(__dirname,"/static/api-documentation.html"));
+});
 
 
 //port number
@@ -51,13 +56,12 @@ app.use("/api/reviews",reviews_route);
 app.use("/api/passwords",passwords_route);
 
 
-app.get("/", (req,res) => {
-    res.send("<h1>hello</h1>");
-});
+// app.get("/", (req,res) => {
+//     res.send("<h1>hello</h1>");
+// });
 
-app.get("/api", (req,res) => {
-    res.sendFile(path.join(__dirname,"/static/api-documentation.html"));
-});
+
+
 
 app.listen(port, () => {
     console.log("Server started at port: "+port)

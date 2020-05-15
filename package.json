@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "main": "node server.js"
+    "main": "node server.js",
+    "build-comment": "cd frontend && npm run build",
+    "install-frontend": "cd frontend && npm install",
+    "heroku-postbuild-comment":"npm run install-frontend && npm run build"
   },
   "author": "ikesh",
   "license": "ISC",
