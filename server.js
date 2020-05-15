@@ -38,7 +38,7 @@ app.use(cors({
 app.use(bodyparser.json());
 
 //static files
-app.use(express.static('frontend/build'));
+// app.use(express.static('frontend/dist'));
 
 app.get("/api", (req,res) => {
     res.sendFile(path.join(__dirname,"/static/api-documentation.html"));
