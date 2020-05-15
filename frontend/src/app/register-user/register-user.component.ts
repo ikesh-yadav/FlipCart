@@ -2,6 +2,7 @@ import { MyserviceService } from './../myservice.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-user',
@@ -15,13 +16,15 @@ export class RegisterUserComponent implements OnInit {
   myForm: FormGroup;
   myLoginForm: FormGroup;
 
-  constructor(private _myservice:MyserviceService, private _http: HttpClient) {
-    this.myForm = new FormGroup({
-      first : new FormControl(null),
-      last : new FormControl(null),
-      email : new FormControl(null, Validators.email),
-      password : new FormControl(null, Validators.required),
-      cnfpass : new FormControl(null, this.passValidator),
+  constructor(private _myservice:MyserviceService, private _http: HttpClient,
+    private _router: Router,
+    private _activatedRoute: ActivatedRoute) {
+      this.myForm = new FormGroup({
+        first : new FormControl(null),
+        last : new FormControl(null),
+        email : new FormControl(null, Validators.email),
+        password : new FormControl(null, Validators.required),
+        cnfpass : new FormControl(null, this.passValidator),
     });
 
     this.myForm.controls.password.valueChanges
@@ -65,18 +68,21 @@ export class RegisterUserComponent implements OnInit {
   @Input() deviceXs: boolean;
 
   register() {
-    console.log(this.myForm.value);
-    this._myservice.submitRegister(this.myForm.value)
-    .subscribe(
-        (data) => {
-          this.submitPswd(this.myForm.value)
-          .subscribe(
-            (data) => this.successMessage = "SUCCESSful Registeration :)",
-            (error) => this.successMessage = "Error creating password :(",
-          );
-        },
-        (error) => {this.successMessage = "Error creating user :(";},
-    );
+    if(this.myForm.valid) {
+      console.log(this.myForm.value);
+      this._myservice.submitRegister(this.myForm.value)
+      .subscribe(
+          (data) => {
+            this.submitPswd(this.myForm.value)
+            .subscribe(
+              (data) => this.successMessage = "Successful Registeration, Move to Sign In :)",
+              (error) => this.successMessage = "Error creating password :(",
+            );
+          },
+          (error) => {this.successMessage = "Error creating user :(";},
+      );
+      this.movetoLogin();
+    }
   }
 
   submitPswd(body:any) {
@@ -91,12 +97,25 @@ export class RegisterUserComponent implements OnInit {
   }
 
   login() {
-    console.log(this.myLoginForm.value);
-    this._myservice.submitLogin(this.myLoginForm.value)
-    .subscribe(
-        (data) => this.loginSuccessMessage = "SUCCESSFUL LOGIN :)",
-        (error) => this.loginSuccessMessage = "FAILURE :(",
-    );
+    if(this.myLoginForm.valid) {
+      console.log(this.myLoginForm.value);
+      this._myservice.submitLogin(this.myLoginForm.value)
+      .subscribe(
+          (data) => this.loginSuccessMessage = "SUCCESSFUL LOGIN :)",
+          (error) => this.loginSuccessMessage = "FAILURE :(",
+      );
+      this.movetoProducts();
+    }
+  }
+
+  movetoProducts() {
+    console.log('moving to products page...');
+    this._router.navigate(['/products'], { relativeTo: this._activatedRoute });
+  }
+
+  movetoLogin() {
+    console.log('moving to login page...');
+    this._router.navigate(['/register-user'], { relativeTo: this._activatedRoute });
   }
 
 }

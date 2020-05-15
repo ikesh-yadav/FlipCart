@@ -1,6 +1,6 @@
 <div [ngClass]="deviceXs ? 'mobile': 'pc'">
   <mat-card class="mat-elevation-z12">
-    <mat-card-title style="text-align:center;">SignIn/SignUp</mat-card-title>
+    <mat-card-title style="text-align:center;">Hey User !</mat-card-title>
     <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
       <mat-tab label="Sign In">
           <mat-card-content>
@@ -51,7 +51,7 @@
               </button>
 
 
-            {{deviceXs}}
+            <!-- {{deviceXs}} -->
             {{loginSuccessMessage}}
 
             </form>
@@ -139,8 +139,8 @@
               Sign Up
             </button>
 
-            {{deviceXs}}
-            {{successMessage}}
+            <!-- {{deviceXs}} -->
+           <div class="successMessage">{{successMessage}}</div>
           </form>
         </mat-card-content>
       </mat-tab>

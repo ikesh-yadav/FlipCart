@@ -68,3 +68,9 @@ span {
   color: firebrick;
   padding-left: 50px;
 }
+
+.successMessage {
+  color: darkmagenta;
+  font-size: medium;
+  padding-left: 20px;
+}

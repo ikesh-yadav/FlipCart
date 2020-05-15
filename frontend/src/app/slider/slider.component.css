@@ -36,3 +36,7 @@ h3, p {
     filter: drop-shadow(0 0 5px rgb(226, 169, 47));
     max-width: 650px;
 }
+
+*:focus {
+  outline: 0;
+}

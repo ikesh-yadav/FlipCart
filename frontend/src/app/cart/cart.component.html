@@ -34,17 +34,17 @@
 </div>
 
 
-  <div>
+  <div >
   <div class="cart-product-container container row" *ngFor="let item of cartProducts; let i=index">
     <mat-card class="col-md-5">
       <img [src]="item.img" alt="" class="custom-image-style">
     </mat-card>
+
     <mat-card class="cart-product-desc col-md-3">
       <div><p>{{item.title}}</p></div>
       <div><p><strong>Rs {{item.price*item.qt}}</strong></p></div>
     </mat-card>
     <mat-card class="edit-cart-container col-md-2">
-      <!-- <span><p>Quantity :</p></span><br> -->
       <div><p>Quantity:</p></div>
       <input (change)="updateTotal()" [(ngModel)]="item.qt" type="number" class="form-control">
     </mat-card>
