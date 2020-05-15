@@ -1,3 +1,30 @@
+<mat-toolbar class="header">
+  <mat-toolbar-row fxLayoutAlign="space-around center">
+      <button mat-button (click)="catFunc(0)">
+        <svg-icon src="../../assets/flame.svg" [svgStyle]="{ 'width.px':24, 'height.px':24  }"></svg-icon>
+        <span id="logo">Hot</span>
+      </button>
+      <button mat-button (click)="catFunc(1)">
+        <svg-icon src="../../assets/book.svg" [svgStyle]="{ 'width.px':26, 'height.px':26  }"></svg-icon>
+        <span id="logo">Books</span>
+      </button>
+      <button mat-button (click)="catFunc(2)">
+        <svg-icon src="../../assets/shoes.svg" [svgStyle]="{ 'width.px':38, 'height.px':38  }"></svg-icon>
+        <span id="logo">Shoes</span>
+      </button>
+  </mat-toolbar-row>
+  <mat-toolbar-row fxLayoutAlign="space-around center">
+    <button mat-button (click)="catFunc(3)">
+      <svg-icon src="../../assets/desktop.svg" [svgStyle]="{ 'width.px':25, 'height.px':25  }"></svg-icon>
+      <span id="logo">Computers & Accessorries</span>
+    </button>
+    <button mat-button (click)="catFunc(4)">
+      <svg-icon src="../../assets/grocery.svg" [svgStyle]="{ 'width.px':27, 'height.px':27  }"></svg-icon>
+      <span id="logo">Grocery</span>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <div class="container row">
   <div class="col-md-2">
     <h1>{{ title }}</h1>
@@ -27,8 +54,10 @@
     </div>
   </div>
 </div>
+
 <hr>
-<div class="container">
+
+<div class="container" *ngIf = " category == 0 ">
   <div class="row">
       <div class="col-md-4 col-centered" *ngFor="let product of products;let i=index">
         <div class="card card-block">
@@ -45,4 +74,32 @@
         </div>
       </div>
   </div>
+</div>
+
+<div class="container" *ngIf = " category == 1 ">
+  Books<hr>
+  <ul *ngFor = "let item of bookData" >
+    <li> {{item.name}} {{item.price}} </li>
+  </ul>
+</div>
+
+<div class="container" *ngIf = " category == 2 ">
+  Shoes<hr>
+  <ul *ngFor = "let item of shoesData" >
+    <li> {{item.name}} {{item.price}} </li>
+  </ul>
+</div>
+
+<div class="container" *ngIf = " category == 3 ">
+  Computers <hr>
+  <ul *ngFor = "let item of compData" >
+    <li> {{item.name}} {{item.price}} </li>
+  </ul>
+</div>
+
+<div class="container" *ngIf = " category == 4 ">
+  Grocery<hr>
+  <ul *ngFor = "let item of groceryData" >
+    <li> {{item.name}} {{item.price}} </li>
+  </ul>
 </div>

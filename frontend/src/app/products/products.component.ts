@@ -1,6 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import book_products from '../scraped-json-products/result-books.json'
+import comp_products from '../scraped-json-products/result-comp-acs.json'
+import grocery_products from '../scraped-json-products/result-grofers.json'
+import shoes_products from '../scraped-json-products/result-shoes.json'
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -12,12 +17,54 @@ export class ProductsComponent implements OnInit {
   products: any;
   cartProducts: any = [];
   title:String = "Products";
+  category: any = 0;
 
-
-  //constructor() { }
   constructor(private router: Router) { }
 
+  catFunc( i ) {
+    this.category = i;
+  }
+
+  public compData : {
+    name: string;
+    price: string;
+    image: string;
+    rating: string;
+  }[] = comp_products;
+
+  public bookData : (
+      { name: string;
+      price: string;
+      image: string;
+      rating: string;
+      author: string; } |
+      { name: string;
+        image: string;
+        rating: string;
+        author: string;
+        price?: undefined; }
+  )[] = book_products;
+
+  public groceryData: {
+    name: string;
+    price: string;
+    qty: string;
+    image: string;
+  }[] = grocery_products;
+
+  public shoesData: (
+    { name: string; brand: string; price: string; image: string; rating: string; } |
+    { name: string; brand: string; price: string; image: string; rating?: undefined; } |
+    { name: string; brand: string; image: string; rating: string; price?: undefined; }
+    )[] = shoes_products;
+
   ngOnInit() {
+
+    // console.log(book_products);
+    // console.log(comp_products);
+    // console.log(grocery_products);
+    // console.log(shoes_products);
+
     let data = localStorage.getItem('cart');
 
     if(data !== null){

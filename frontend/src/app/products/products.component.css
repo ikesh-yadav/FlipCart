@@ -38,3 +38,10 @@ img {
   width: 150px;
   height: 150px;
 }
+
+.header span {
+  padding: 0px 5px;
+  font-size: medium;
+  font-family: 'Ubuntu', sans-serif;
+}
+
