@@ -64,7 +64,8 @@
           <img [src]="product.img" alt="" class="custom-image-style">
           <div class="product-desc-container row">
             <div class="container">
-              <p><strong>{{product.title}}: ${{product.price}}</strong></p>
+              <p><strong>{{product.title}}</strong></p>
+              <p><strong>Rs {{product.price}}</strong></p>
               <p>{{product.description}}</p>
             </div>
             <div class="offset-md-4 col-md-4">
@@ -78,28 +79,86 @@
 
 <div class="container" *ngIf = " category == 1 ">
   Books<hr>
-  <ul *ngFor = "let item of bookData" >
-    <li> {{item.name}} {{item.price}} </li>
-  </ul>
+  <div class="row">
+    <div class="col-md-4 col-centered" *ngFor="let product of bookData;let i=index">
+      <div class="card card-block">
+        <img [src]="product.image" alt="" class="custom-image-style">
+        <div class="product-desc-container row">
+          <div class="container">
+            <p><strong>{{product.name}}</strong></p>
+            <p><strong>Rs {{product.price}}</strong></p>
+            <p>{{product.author}}</p>
+            <p>{{product.rating}}</p>
+          </div>
+          <div class="offset-md-4 col-md-4">
+            <button class="btn btn-primary btn-sm">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container" *ngIf = " category == 2 ">
   Shoes<hr>
-  <ul *ngFor = "let item of shoesData" >
-    <li> {{item.name}} {{item.price}} </li>
-  </ul>
+  <div class="row">
+    <div class="col-md-4 col-centered" *ngFor="let product of shoesData;let i=index">
+      <div class="card card-block">
+        <img [src]="product.image" alt="" class="custom-image-style">
+        <div class="product-desc-container row">
+          <div class="container">
+            <p><strong>{{product.name}}</strong></p>
+            <p><strong>Rs {{product.price}}</strong></p>
+            <p>{{product.brand}}</p>
+            <p>{{product.rating}}</p>
+          </div>
+          <div class="offset-md-4 col-md-4">
+            <button class="btn btn-primary btn-sm">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container" *ngIf = " category == 3 ">
   Computers <hr>
-  <ul *ngFor = "let item of compData" >
-    <li> {{item.name}} {{item.price}} </li>
-  </ul>
+  <div class="row">
+    <div class="col-md-4 col-centered" *ngFor="let product of compData;let i=index">
+      <div class="card card-block">
+        <img [src]="product.image" alt="" class="custom-image-style">
+        <div class="product-desc-container row">
+          <div class="container">
+            <p><strong>{{product.name}}</strong></p>
+            <p><strong>Rs {{product.price}}</strong></p>
+            <p>{{product.rating}}</p>
+          </div>
+          <div class="offset-md-4 col-md-4">
+            <button class="btn btn-primary btn-sm">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container" *ngIf = " category == 4 ">
   Grocery<hr>
-  <ul *ngFor = "let item of groceryData" >
-    <li> {{item.name}} {{item.price}} </li>
-  </ul>
+  <div class="row">
+    <div class="col-md-4 col-centered" *ngFor="let product of groceryData;let i=index">
+      <div class="card card-block">
+        <img [src]="product.image" alt="" class="custom-image-style">
+        <div class="product-desc-container row">
+          <div class="container">
+            <p><strong>{{product.name}}</strong></p>
+            <p><strong>Rs {{product.price}}</strong></p>
+            <p>{{product.qty}}</p>
+          </div>
+          <div class="offset-md-4 col-md-4">
+            <button class="btn btn-primary btn-sm">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
