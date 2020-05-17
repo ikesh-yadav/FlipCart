@@ -12,16 +12,19 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit, OnDestroy {
 
 
-  username = '';
+  username : string = '';
+  userdata : any ;
   mediaSub:Subscription;
   deviceXs:boolean;
 	title = "FlipCart";
 	url = "";
   listItems: any;
 
+
   logout() {
-    // localStorage.removeItem('token');
-    // this._router.navigate(['/home']);
+    localStorage.removeItem('token');
+    this._router.navigate(['/home']);
+    this.username = '';
   }
 
   constructor(public MediaObserver:MediaObserver
@@ -29,11 +32,20 @@ export class AppComponent implements OnInit, OnDestroy {
     , private _router: Router
     ) {
 
-      this.myService.getUserName()
-      .subscribe(
-        data => this.username = data.toString(),
-        error => { console.log("Error getting the username !"); }
-      );
+      if(localStorage.getItem('token') != null ) {
+        this.myService.getUserName()
+        .subscribe(
+          data =>{
+            this.username = data['first'].toString();
+            this.userdata = data;
+            console.log(this.username);
+            console.log(this.userdata);
+
+         },
+
+          error => { console.log("Error getting the username !"); }
+        );
+      }
 
 		this.listItems = [
 			{
