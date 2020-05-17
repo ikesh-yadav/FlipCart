@@ -38,7 +38,8 @@ app.use(cors({
 app.use(bodyparser.json());
 
 //static files
-// app.use(express.static('frontend/dist'));
+//fetch static files from this location
+app.use(express.static(path.join(__dirname, "/frontend/dist/flipcart-frontend/")));
 
 app.get("/api", (req,res) => {
     res.sendFile(path.join(__dirname,"/static/api-documentation.html"));
@@ -54,9 +55,6 @@ app.use("/api/products",products_route);
 app.use("/api/orders",orders_route);
 app.use("/api/reviews",reviews_route);
 //app.use("/api/passwords",passwords_route);
-
-//fetch static files from this location
-app.use(express.static(path.join(__dirname, "/frontend/dist/flipcart-frontend/")));
 
 
 //load the angular app 
