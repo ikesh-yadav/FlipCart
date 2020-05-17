@@ -80,7 +80,7 @@
 <div class="container" *ngIf = " category == 1 ">
   Books<hr>
   <div class="row">
-    <div class="col-md-4 col-centered" *ngFor="let product of bookData;let i=index">
+    <div class="col-md-4 col-centered" *ngFor="let product of books;let i=index">
       <div class="card card-block">
         <img [src]="product.image" alt="" class="custom-image-style">
         <div class="product-desc-container row">

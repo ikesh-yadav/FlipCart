@@ -33,7 +33,12 @@ export class MyserviceService {
   getUserName() {
       return this._http.get('https://flipcart-meanapp.herokuapp.com/api/users/email?token='+localStorage.getItem('token'), {
         observe : 'body',
-        //params : new HttpParams().append('token', localStorage.getItem('token'))
+      });
+  }
+
+  getBookProducts() {
+    return this._http.get('https://flipcart-meanapp.herokuapp.com/api/products', {
+        observe : 'body',
       });
   }
 

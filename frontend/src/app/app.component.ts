@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { MediaObserver, MediaChange } from "@angular/flex-layout";
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { async } from 'rxjs/internal/scheduler/async';
 
 @Component({
 	selector: "app-root",
@@ -27,25 +28,27 @@ export class AppComponent implements OnInit, OnDestroy {
     this.username = '';
   }
 
+  async getUser() {
+    if(localStorage.getItem('token') != null ) {
+     await this.myService.getUserName()
+      .subscribe(
+        data =>{
+          this.username = data['first'].toString();
+          this.userdata = data;
+          console.log(this.username);
+          console.log(this.userdata);
+       },
+        error => { console.log("Error getting the username !"); }
+      );
+    }
+  }
+
   constructor(public MediaObserver:MediaObserver
     , private myService: MyserviceService
     , private _router: Router
     ) {
 
-      if(localStorage.getItem('token') != null ) {
-        this.myService.getUserName()
-        .subscribe(
-          data =>{
-            this.username = data['first'].toString();
-            this.userdata = data;
-            console.log(this.username);
-            console.log(this.userdata);
-
-         },
-
-          error => { console.log("Error getting the username !"); }
-        );
-      }
+    this.getUser();
 
 		this.listItems = [
 			{
