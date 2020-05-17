@@ -76,36 +76,52 @@ export class RegisterUserComponent implements OnInit {
       console.log(this.myForm.value);
       this._myservice.submitRegister(this.myForm.value)
       .subscribe(
-          (data) => {
-            this.submitPswd(this.myForm.value)
-            .subscribe(
-              (data) => this.successMessage = "Successful Registeration, Move to Sign In :)",
-              (error) => this.successMessage = "Error creating password :(",
-            );
-          },
-          (error) => {this.successMessage = "Error creating user :(";},
+        (data) => this.successMessage = "Successful Registeration, Move to Sign In :)",
+        (error) => this.successMessage = "Error creating user :(",
       );
       this.movetoLogin();
     }
   }
 
-  submitPswd(body:any) {
-    return this._http
-      .post(
-        'https://flipcart-meanapp.herokuapp.com/api/passwords',
-        body,
-        {
-          observe: 'body'
-        }
-      );
-  }
+  // register() {
+  //   if(this.myForm.valid) {
+  //     console.log(this.myForm.value);
+  //     this._myservice.submitRegister(this.myForm.value)
+  //     .subscribe(
+  //         (data) => {
+  //           this.submitPswd(this.myForm.value)
+  //           .subscribe(
+  //             (data) => this.successMessage = "Successful Registeration, Move to Sign In :)",
+  //             (error) => this.successMessage = "Error creating password :(",
+  //           );
+  //         },
+  //         (error) => {this.successMessage = "Error creating user :(";},
+  //     );
+  //     this.movetoLogin();
+  //   }
+  // }
+
+  // submitPswd(body:any) {
+  //   return this._http
+  //     .post(
+  //       'https://flipcart-meanapp.herokuapp.com/api/passwords',
+  //       body,
+  //       {
+  //         observe: 'body'
+  //       }
+  //     );
+  // }
 
   login() {
     if(this.myLoginForm.valid) {
       console.log(this.myLoginForm.value);
       this._myservice.submitLogin(this.myLoginForm.value)
       .subscribe(
-          (data) => this.loginSuccessMessage = "SUCCESSFUL LOGIN :)",
+          (data) => {
+            console.log(data);
+            localStorage.setItem('token', data.toString());
+            this.loginSuccessMessage = "SUCCESSFUL LOGIN :)";
+          },
           (error) => this.loginSuccessMessage = "FAILURE :(",
       );
       this.movetoProducts();

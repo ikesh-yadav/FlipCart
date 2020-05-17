@@ -1,6 +1,8 @@
+import { MyserviceService } from './myservice.service';
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { MediaObserver, MediaChange } from "@angular/flex-layout";
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: "app-root",
@@ -9,12 +11,30 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
+
+  username = '';
   mediaSub:Subscription;
   deviceXs:boolean;
 	title = "FlipCart";
 	url = "";
-	listItems: any;
-	constructor(public MediaObserver:MediaObserver) {
+  listItems: any;
+
+  logout() {
+    // localStorage.removeItem('token');
+    // this._router.navigate(['/home']);
+  }
+
+  constructor(public MediaObserver:MediaObserver
+    , private myService: MyserviceService
+    , private _router: Router
+    ) {
+
+      this.myService.getUserName()
+      .subscribe(
+        data => this.username = data.toString(),
+        error => { console.log("Error getting the username !"); }
+      );
+
 		this.listItems = [
 			{
 				name: "Home",

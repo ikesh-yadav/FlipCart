@@ -20,23 +20,35 @@
           <div *ngIf="!deviceXs" class="buttons">
             <a mat-button href="{{listItems[1].link}}">Products</a>
             <a mat-button href="{{listItems[2].link}}">About</a>
-            <a mat-button href="{{listItems[3].link}}">Login</a>
+            <a *ngIf=" username == '' " mat-button href="{{listItems[3].link}}">Login</a>
+            <a *ngIf=" username != '' " mat-button href="{{listItems[0].link}}">Hey, {{username}}</a>
           </div>
         </div>
-        <div class="menu buttons">
+        <div class="menu buttons" fxLayoutAlign="space-between center" >
+
+          <div *ngIf=" username != '' " class="buttons">
+            <button mat-button (click)="logout()" >
+              <mat-icon>power_settings_new</mat-icon>
+              Logout
+            </button>
+          </div>
+
           <a href="{{listItems[4].link}}">
             <button mat-icon-button >
               <mat-icon>shopping_cart</mat-icon>
               <span *ngIf="!deviceXs">Cart</span>
             </button>
           </a>
+
         </div>
       </mat-toolbar-row>
 
       <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-around center" class="buttons">
         <a mat-button href="{{listItems[1].link}}">Products</a>
         <a mat-button href="{{listItems[2].link}}">About</a>
-        <a mat-button href="{{listItems[3].link}}">Login</a>
+        <!-- <a mat-button href="{{listItems[3].link}}">Login</a> -->
+        <a *ngIf=" username == '' " mat-button href="{{listItems[3].link}}">Login</a>
+        <a *ngIf=" username != '' " mat-button href="{{listItems[4].link}}">Hey, {{username}}</a>
       </mat-toolbar-row>
     </mat-toolbar>
     </div>
