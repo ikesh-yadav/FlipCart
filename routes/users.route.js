@@ -15,7 +15,7 @@ const SecretKey = "hello world";
 const Users = require("../models/users.model");
 const Passwords = require("../models/passwords.model");
 
-/*
+/*Disabled
 //get code for retriving one user with matching id or all users
 router.get("/:id?", (req, res) => {
     if (req.params.id ){
@@ -39,9 +39,9 @@ router.get("/:id?", (req, res) => {
 */
 
 //get code for retriving one user with matching id or all users
-router.get("/email/:email", (req, res) => {
-    if ( req.params.email ){
-        Users.findOne({email:req.params.email},(err, users ) => {
+router.get("/email/", verifyToken, (req, res) => {
+    if ( req.body.decodedToken.email ){
+        Users.findOne({email:req.body.decodedToken.email},(err, users ) => {
             if(err){
                 res.status(501).send({message:err});
             }else{
@@ -52,6 +52,13 @@ router.get("/email/:email", (req, res) => {
         res.status(501).json({ message:"email not included in html body"});
     }
 });
+
+//get code to get user email from jwt
+router.get("/getemail", verifyToken, (req, res, next) => {
+    return res.status(200).json(req.body.decodedToken);
+});
+
+
 //post code for adding users
 router.post("/", (req, res) => {
     htmlBody = req.body;
@@ -228,9 +235,7 @@ router.post("/update", (req,res) => {
     }
 });
 
-router.get("/getemail", verifyToken, (req, res, next) => {
-    return res.status(200).json(req.body.decodedToken);
-});
+
 
 function verifyToken(req,res,next){
     let token = req.query.token;
@@ -246,8 +251,7 @@ function verifyToken(req,res,next){
         });
     }else {
         return res.status(403).json({message:'Forbidden:Token required'});
-    }
-    
-  }
+    }   
+}
 
 module.exports = router;
