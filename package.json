@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "main": "node server.js",
-    "build-frontend": "cd frontend && npm run build",
+    "build-frontend": "cd frontend && npm run build --prod",
     "install-frontend": "cd frontend && npm install",
     "heroku-postbuild": "npm run install-frontend && npm run build-frontend"
   },
