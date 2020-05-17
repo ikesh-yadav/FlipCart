@@ -24,6 +24,19 @@ router.get("/:id?", (req, res) => {
         });
     }
 });
+
+//get code for retriving products from a category
+router.get("/category/:category", (req, res) => {
+    Products.find( {category:req.params.category}, (err, Products ) => {
+        if(err){
+            res.status(501).json({message:err});
+        }else{
+            res.status(201).json(Products);                    
+        }
+    });
+});
+
+
 //post code for adding  products to database
 router.post("/", (req, res) => {
     htmlBody = req.body;
