@@ -42,18 +42,18 @@ export class ProductsComponent implements OnInit {
     rating: string;
   }[] = comp_products;
 
-  public bookData : (
-      { name: string;
-      price: string;
-      image: string;
-      rating: string;
-      author: string; } |
-      { name: string;
-        image: string;
-        rating: string;
-        author: string;
-        price?: undefined; }
-  )[] = book_products;
+  // public bookData : (
+  //     { name: string;
+  //     price: string;
+  //     image: string;
+  //     rating: string;
+  //     author: string; } |
+  //     { name: string;
+  //       image: string;
+  //       rating: string;
+  //       author: string;
+  //       price?: undefined; }
+  // )[] = book_products;
 
   public groceryData: {
     name: string;
