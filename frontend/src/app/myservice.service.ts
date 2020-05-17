@@ -36,8 +36,8 @@ export class MyserviceService {
       });
   }
 
-  getBookProducts() {
-    return this._http.get('https://flipcart-meanapp.herokuapp.com/api/products', {
+  getProducts(category) {
+    return this._http.get('https://flipcart-meanapp.herokuapp.com/api/products/category/'+category, {
         observe : 'body',
       });
   }

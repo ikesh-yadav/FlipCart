@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
 
   constructor(private router: Router, private _myservice:MyserviceService) {
 
-    this._myservice.getBookProducts()
+    this._myservice.getProducts('books')
     .subscribe(
       data => { this.books = data; },
       error => { console.log("Error retrieving books"); }
