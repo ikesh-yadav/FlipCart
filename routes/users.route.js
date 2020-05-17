@@ -132,8 +132,8 @@ router.post("/login", (req, res) => {
 });
 
 //code for deleting a user
-router.delete("/delete", (req, res) => {
-    if(req.body.email) {
+router.delete("/delete", verifyToken, (req, res) => {
+    if ( req.body.decodedToken.email ){
         Users.deleteOne({email:req.body.email}, (err, result) => {
             if(err){
                 res.status(501).json({message:err});
@@ -161,9 +161,9 @@ router.delete("/delete", (req, res) => {
 });
 
 //code to update user data
-router.post("/update", (req,res) => {
+router.post("/update", verifyToken, (req,res) => {
     htmlBody = req.body;
-    if(htmlBody.email){
+    if ( htmlBody.decodedToken.email ){
         update = {}
         if (htmlBody.name) {
             update.name = htmlBody.name;
@@ -246,6 +246,7 @@ function verifyToken(req,res,next){
             }
             if(tokendata){
                 req.body["decodedToken"] = tokendata;
+                req.body["email"] = tokendata.email;
                 next();
             }
         });
