@@ -16,7 +16,7 @@
                 >
                 <mat-icon matSuffix>email</mat-icon>
               </mat-form-field>
-              <span *ngIf="isValid('email')">Entered email is invalid</span>
+              <span *ngIf="isLoginValid('email')">Entered email is invalid</span>
 
               <mat-form-field>
                 <input
@@ -31,7 +31,7 @@
                 >
                 <mat-icon matSuffix>lock</mat-icon>
               </mat-form-field>
-              <span *ngIf="isValid('password')">Password requires atleast 6 char</span>
+              <span *ngIf="isLoginValid('password')">Password requires atleast 6 char</span>
 
               <mat-checkbox>Remember Me!</mat-checkbox>
               <button
