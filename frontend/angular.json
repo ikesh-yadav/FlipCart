@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "user-login-page": {
+    "flipcart-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/user-login-page",
+            "outputPath": "dist/flipcart-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "user-login-page:build"
+            "browserTarget": "flipcart-frontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "user-login-page:build:production"
+              "browserTarget": "flipcart-frontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "user-login-page:build"
+            "browserTarget": "flipcart-frontend:build"
           }
         },
         "test": {
@@ -113,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "user-login-page:serve"
+            "devServerTarget": "flipcart-frontend:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "user-login-page:serve:production"
+              "devServerTarget": "flipcart-frontend:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "user-login-page"
+  "defaultProject": "flipcart-frontend"
 }

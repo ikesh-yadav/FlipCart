@@ -55,10 +55,16 @@ app.use("/api/orders",orders_route);
 app.use("/api/reviews",reviews_route);
 app.use("/api/passwords",passwords_route);
 
-
+/*
 app.get("*", (req,res) => {
     res.sendFile(path.join(__dirname, "/frontend/dist/user-login-page/index.html"));
 });
+*/
+
+app.use(express.static(path.join(__dirname, "/frontend/dist/flipcart-frontend/")));
+
+app.get("/*", (req, res) => { res.sendFile(path.join(__dirname, "/frontend/dist/flipcart-frontend/")); } );
+
 
 app.listen(port, () => {
     console.log("Server started at port: "+port)
