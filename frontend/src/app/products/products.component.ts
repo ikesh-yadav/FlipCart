@@ -5,6 +5,7 @@ import book_products from '../scraped-json-products/result-books.json'
 import comp_products from '../scraped-json-products/result-comp-acs.json'
 import grocery_products from '../scraped-json-products/result-grofers.json'
 import shoes_products from '../scraped-json-products/result-shoes.json'
+import { MyserviceService } from '../myservice.service';
 
 @Component({
   selector: 'app-products',
@@ -18,8 +19,17 @@ export class ProductsComponent implements OnInit {
   cartProducts: any = [];
   title:String = "Products";
   category: any = 0;
+  books : any = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _myservice:MyserviceService) {
+
+    this._myservice.getBookProducts()
+    .subscribe(
+      data => { this.books = data; },
+      error => { console.log("Error retrieving books"); }
+    );
+
+  }
 
   catFunc( i ) {
     this.category = i;
@@ -58,6 +68,7 @@ export class ProductsComponent implements OnInit {
     { name: string; brand: string; image: string; rating: string; price?: undefined; }
     )[] = shoes_products;
 
+
   ngOnInit() {
 
     // console.log(book_products);
@@ -65,13 +76,13 @@ export class ProductsComponent implements OnInit {
     // console.log(grocery_products);
     // console.log(shoes_products);
 
-    let data = localStorage.getItem('cart');
+    //let data = localStorage.getItem('cart');
 
-    if(data !== null){
-      this.cartProducts = JSON.parse(data);
-    } else {
-      this.cartProducts = [];
-    }
+    // if(data !== null){
+    //   this.cartProducts = JSON.parse(data);
+    // } else {
+    //   this.cartProducts = [];
+    // }
 
     this.products = [
       {

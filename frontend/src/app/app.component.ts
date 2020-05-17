@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { MediaObserver, MediaChange } from "@angular/flex-layout";
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { async } from 'rxjs/internal/scheduler/async';
 
 @Component({
 	selector: "app-root",
@@ -12,16 +13,34 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit, OnDestroy {
 
 
-  username = '';
+  username : string = '';
+  userdata : any ;
   mediaSub:Subscription;
   deviceXs:boolean;
 	title = "FlipCart";
 	url = "";
   listItems: any;
 
+
   logout() {
-    // localStorage.removeItem('token');
-    // this._router.navigate(['/home']);
+    localStorage.removeItem('token');
+    this._router.navigate(['/home']);
+    this.username = '';
+  }
+
+  async getUser() {
+    if(localStorage.getItem('token') != null ) {
+     await this.myService.getUserName()
+      .subscribe(
+        data =>{
+          this.username = data['first'].toString();
+          this.userdata = data;
+          console.log(this.username);
+          console.log(this.userdata);
+       },
+        error => { console.log("Error getting the username !"); }
+      );
+    }
   }
 
   constructor(public MediaObserver:MediaObserver
@@ -29,11 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
     , private _router: Router
     ) {
 
-      this.myService.getUserName()
-      .subscribe(
-        data => this.username = data.toString(),
-        error => { console.log("Error getting the username !"); }
-      );
+    this.getUser();
 
 		this.listItems = [
 			{

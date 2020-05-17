@@ -119,12 +119,14 @@ export class RegisterUserComponent implements OnInit {
       .subscribe(
           (data) => {
             console.log(data);
-            localStorage.setItem('token', data.toString());
+            localStorage.setItem('token', data['token'].toString());
             this.loginSuccessMessage = "SUCCESSFUL LOGIN :)";
+            this.movetoProducts();
           },
           (error) => this.loginSuccessMessage = "FAILURE :(",
       );
-      this.movetoProducts();
+
+
     }
   }
 
