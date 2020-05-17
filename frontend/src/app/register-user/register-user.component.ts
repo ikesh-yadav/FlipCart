@@ -47,6 +47,10 @@ export class RegisterUserComponent implements OnInit {
     return this.myForm.get(controlName).invalid && this.myForm.get(controlName).touched;
   }
 
+  isLoginValid(controlName) {
+    return this.myLoginForm.get(controlName).invalid && this.myLoginForm.get(controlName).touched;
+  }
+
   passValidator(control: AbstractControl) {
     if (control && (control.value !== null || control.value !== undefined)) {
       const cnfpassValue = control.value;
