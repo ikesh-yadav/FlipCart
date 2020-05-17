@@ -8,11 +8,12 @@
     "main": "node server.js",
     "build-frontend": "cd frontend && npm run build",
     "install-frontend": "cd frontend && npm install",
-    "heroku-postbuild":"npm run install-frontend && npm run build-frontend"
+    "heroku-postbuild": "npm run install-frontend && npm run build-frontend"
   },
   "author": "ikesh",
   "license": "ISC",
   "dependencies": {
+    "@angular/cli": "^9.1.6",
     "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
