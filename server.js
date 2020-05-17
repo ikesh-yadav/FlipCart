@@ -55,14 +55,11 @@ app.use("/api/orders",orders_route);
 app.use("/api/reviews",reviews_route);
 app.use("/api/passwords",passwords_route);
 
-/*
-app.get("*", (req,res) => {
-    res.sendFile(path.join(__dirname, "/frontend/dist/user-login-page/index.html"));
-});
-*/
-
+//fetch static files from this location
 app.use(express.static(path.join(__dirname, "/frontend/dist/flipcart-frontend/")));
 
+
+//load the angular app 
 app.get("/*", (req, res) => { res.sendFile(path.join(__dirname, "/frontend/dist/flipcart-frontend/")); } );
 
 
