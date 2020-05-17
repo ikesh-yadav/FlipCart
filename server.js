@@ -13,7 +13,7 @@ const users_route = require("./routes/users.route");
 const products_route = require("./routes/products.route");
 const orders_route = require("./routes/orders.route");
 const reviews_route = require("./routes/reviews.route");
-const passwords_route = require("./routes/passwords.route");
+const passwords_route = require("./routes/unused-routes/passwords.route");
 
 
 //connect to mongo
@@ -53,7 +53,7 @@ app.use("/api/users",users_route);
 app.use("/api/products",products_route);
 app.use("/api/orders",orders_route);
 app.use("/api/reviews",reviews_route);
-app.use("/api/passwords",passwords_route);
+//app.use("/api/passwords",passwords_route);
 
 //fetch static files from this location
 app.use(express.static(path.join(__dirname, "/frontend/dist/flipcart-frontend/")));

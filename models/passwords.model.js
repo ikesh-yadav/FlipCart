@@ -18,6 +18,7 @@ const PasswordScheme = mongoose.Schema({
         type:String,
         required:true
     }
+
 });
 
 const passwords = module.exports = mongoose.model("passwords", PasswordScheme);
