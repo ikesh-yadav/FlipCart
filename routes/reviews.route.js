@@ -70,11 +70,11 @@ router.get("/products/:id", (req, res) => {
 //post code for adding reviews
 router.post("/", (req, res) => {
     htmlBody = req.body;
-    if (htmlBody.user_id && htmlBody.product_id && htmlBody.stars){
+    if (htmlBody.user_id && htmlBody.product_id && htmlBody.rating){
         let newReview = new Reviews({
             user_id:req.body.user_id,
             product_id:req.body.product_id,
-            stars:req.body.stars,    
+            rating:req.body.rating,    
         });
         if (req.body.review) {
                 newReview.review = req.body.review;
@@ -115,7 +115,7 @@ router.post("/update", (req,res) => {
     htmlBody = req.body;
     if(htmlBody.id){
         update = {}
-        if (htmlBody.stars) {
+        if (htmlBody.rating) {
             update.delivery_address = htmlBody.delivery_address;
         }
         if (htmlBody.review) {

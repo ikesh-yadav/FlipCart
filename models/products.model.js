@@ -6,11 +6,11 @@ const ProductSchema = mongoose.Schema({
         required:true
     },
     category:{
-        type:[{type:String}],
+        type:String,
         required:true
     },
     highlights:{
-        type:[{type:String}],
+        type:[String],
         required:false
     },
     full_details:{
