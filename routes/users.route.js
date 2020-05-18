@@ -188,7 +188,7 @@ router.post("/update", verifyToken, (req,res) => {
             update.email = htmlBody.email
         }
         */
-        Users.findOneAndUpdate(
+        Users.UpdateOne(
             {_id:htmlBody.id},
             update,
             {new:true},        
@@ -213,7 +213,7 @@ router.post("/update", verifyToken, (req,res) => {
                     // update hash in your password DB.
                     update["password"] = hash;
 
-                    Passwords.findOneAndUpdate(
+                    Passwords.UpdateOne(
                         {email:htmlBody.email},
                         update,        
                         (err, result) => {
