@@ -102,7 +102,7 @@ router.post("/update", (req,res) => {
             update.price = htmlBody.price;
         }
 
-        Products.updateOne(
+        Products.findOneAndUpdate(
             {_id:htmlBody.id},
             update,        
             (err, result) => {

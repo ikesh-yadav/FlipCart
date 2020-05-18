@@ -122,7 +122,7 @@ router.post("/update", (req,res) => {
             update.review = htmlBody.review;
         }
         
-        Reviews.updateOne(
+        Reviews.findOneAndUpdate(
             {_id:htmlBody.id},
             update,        
             (err, result) => {
