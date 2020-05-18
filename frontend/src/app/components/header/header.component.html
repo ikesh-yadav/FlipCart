@@ -1,33 +1,40 @@
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-<mat-toolbar class="header">
-  <mat-toolbar-row fxLayoutAlign="space-between center">
-    <div fxLayout="row">
-      <button mat-button >
-        <mat-icon>home</mat-icon>
-        <span id="logo">FlipCart</span>
-      </button>
-      <div *ngIf="!deviceXs" class="buttons">
-        <button mat-button>Products</button>
-        <button mat-button>About</button>
-        <button mat-button>Login</button>
+
+<div>
+  <mat-toolbar class="header">
+
+    <mat-toolbar-row fxLayoutAlign="space-between center">
+      <div fxLayout="row">
+        <a href="{{listItems[0].link}}">
+          <button mat-button >
+            <mat-icon>home</mat-icon>
+            <span id="logo">FlipCart</span>
+          </button>
+        </a>
+        <div *ngIf="!deviceXs" class="buttons">
+          <a mat-button href="{{listItems[1].link}}">Products</a>
+          <a mat-button href="{{listItems[2].link}}">About</a>
+          <a *ngIf=" username == '' " mat-button href="{{listItems[3].link}}">Login</a>
+          <a *ngIf=" username != '' " mat-button href="{{listItems[0].link}}">Hey, {{username}}</a>
+        </div>
       </div>
-    </div>
-    <div class="menu buttons">
-      <button mat-icon-button >
-        <mat-icon>shopping_cart</mat-icon>
-        <span *ngIf="!deviceXs">Cart</span>
-      </button>
-    </div>
+      <div class="menu buttons" fxLayoutAlign="space-between center" >
 
-  </mat-toolbar-row>
+        <a *ngIf=" username != '' " class="buttons">
+          <button mat-button (click)="logout()" >
+            <mat-icon>power_settings_new</mat-icon>
+            Logout
+          </button>
+        </a>
 
-  <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-around center" class="buttons">
-    <button mat-button>Products</button>
-    <button mat-button>Contact Us</button>
-    <button mat-button>About Us</button>
-  </mat-toolbar-row>
-</mat-toolbar>
+        <a href="{{listItems[4].link}}">
+          <button mat-icon-button >
+            <mat-icon>shopping_cart</mat-icon>
+            <span *ngIf="!deviceXs">Cart</span>
+          </button>
+        </a>
+
+      </div>

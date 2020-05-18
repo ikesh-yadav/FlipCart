@@ -24,7 +24,7 @@ a, a * {
 
 a:hover, a:hover * {
   /* /color: rgb(255, 184, 66); */
-  color:rgb(255,225,53);
+  color:rgb(247, 210, 0);
   background-color: rgba(4, 122, 213, 0.568);
 }
 

@@ -1,8 +1,9 @@
 .header{
   background-color: rgb(4, 123, 213);
   color: rgb(255,225,53);
-  margin: 1%;
   border-radius: 5px;
+  width: 98%;
+  margin: 1%;
 }
 
 #logo {
@@ -13,4 +14,24 @@
 
 .menu {
   padding-right: 20px;
+}
+
+a, a * {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover, a:hover * {
+  /* /color: rgb(255, 184, 66); */
+  color:rgb(247, 210, 0);
+  background-color: rgba(4, 122, 213, 0.568);
+}
+
+.col-md-10 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
