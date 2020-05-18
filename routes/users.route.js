@@ -163,7 +163,7 @@ router.delete("/delete", verifyToken, (req, res) => {
 //code to update user data
 router.post("/update", verifyToken, (req,res) => {
     htmlBody = req.body;
-    if ( htmlBody.decodedToken.email ){
+    if ( htmlBody.email ){
         update = {}
         if (htmlBody.name) {
             update.name = htmlBody.name;
@@ -189,7 +189,7 @@ router.post("/update", verifyToken, (req,res) => {
         }
         */
         Users.UpdateOne(
-            {_id:htmlBody.id},
+            {email:htmlBody.email},
             update,
             {new:true},        
             (err, result) => {
