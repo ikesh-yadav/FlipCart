@@ -105,8 +105,10 @@ export class ProductsComponent implements OnInit {
           console.log("R2");
        }, 1000);
     }, 1000);
+  }
 
-
+  goToLoginPage() {
+    this.router.navigate(['/register-user']);
   }
 
   isLoggedIn() {

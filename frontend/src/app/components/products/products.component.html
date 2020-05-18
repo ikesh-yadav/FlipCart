@@ -89,7 +89,7 @@
             <p>{{product.description}}</p>
           </div>
           <div class="offset-md-4 col-md-4">
-            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == false " >Login to Add To Cart</button>
+            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == false " (click) = "goToLoginPage()" >Login to Add To Cart</button>
             <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == true " (click) = "add_cart_db(product._id)" >Add To Cart</button>
           </div>
         </div>
@@ -109,10 +109,11 @@
             <p><strong>{{product.name}}</strong></p>
             <p><strong>Rs {{product.price}}</strong></p>
             <p>{{product.author}}</p>
-            <p>{{product.rating}}</p>
+            <!-- <p>{{product.rating}}</p> -->
           </div>
           <div class="offset-md-4 col-md-4">
-            <button class="btn btn-primary btn-sm">Add To Cart</button>
+            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == false " (click) = "goToLoginPage()" >Login to Add To Cart</button>
+            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == true " (click) = "add_cart_db(product._id)" >Add To Cart</button>
           </div>
         </div>
       </div>
@@ -131,10 +132,11 @@
             <p><strong>{{product.name}}</strong></p>
             <p><strong>Rs {{product.price}}</strong></p>
             <p>{{product.brand}}</p>
-            <p>{{product.rating}}</p>
+            <!-- <p>{{product.rating}}</p> -->
           </div>
           <div class="offset-md-4 col-md-4">
-            <button class="btn btn-primary btn-sm">Add To Cart</button>
+            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == false " (click) = "goToLoginPage()" >Login to Add To Cart</button>
+            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == true " (click) = "add_cart_db(product._id)" >Add To Cart</button>
           </div>
         </div>
       </div>
@@ -152,10 +154,11 @@
           <div class="container">
             <p><strong>{{product.name}}</strong></p>
             <p><strong>Rs {{product.price}}</strong></p>
-            <p>{{product.rating}}</p>
+            <!-- <p>{{product.rating}}</p> -->
           </div>
           <div class="offset-md-4 col-md-4">
-            <button class="btn btn-primary btn-sm">Add To Cart</button>
+            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == false " (click) = "goToLoginPage()" >Login to Add To Cart</button>
+            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == true " (click) = "add_cart_db(product._id)" >Add To Cart</button>
           </div>
         </div>
       </div>
@@ -176,7 +179,8 @@
             <p>{{product.qty}}</p>
           </div>
           <div class="offset-md-4 col-md-4">
-            <button class="btn btn-primary btn-sm">Add To Cart</button>
+            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == false " (click) = "goToLoginPage()" >Login to Add To Cart</button>
+            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == true " (click) = "add_cart_db(product._id)" >Add To Cart</button>
           </div>
         </div>
       </div>
