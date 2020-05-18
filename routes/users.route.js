@@ -188,23 +188,22 @@ router.post("/update", verifyToken, (req,res) => {
             update.email = htmlBody.email
         }
         */
-        Users.UpdateOne(
+        Users.updateOne(
             {email:htmlBody.email},
-            update,
-            {new:true},        
+            update,        
             (err, result) => {
                 if(err){
                     res.status(501).json({message:err});
                 }else{
                     if(result["n"] == 0) {
-                        res.status(501).json({ message:"Users doesnt exist or wromg id"});
+                        res.status(501).json({ message:"Users doesnt exist or wromg id or nothing to update"});
                     }else {
                         res.status(201).json({ message:"Users updated"});                    
                     }
                 }
         });
 
-        if( htmlBody.password){
+        if( htmlBody.password ){
             update = {};
             bcrypt.hash(htmlBody.password, saltRounds, (err, hash) => {
                 if(err) {
@@ -213,7 +212,7 @@ router.post("/update", verifyToken, (req,res) => {
                     // update hash in your password DB.
                     update["password"] = hash;
 
-                    Passwords.UpdateOne(
+                    Passwords.updateOne(
                         {email:htmlBody.email},
                         update,        
                         (err, result) => {
@@ -247,6 +246,8 @@ function verifyToken(req,res,next){
             if(tokendata){
                 req.body["decodedToken"] = tokendata;
                 req.body["email"] = tokendata.email;               
+            }else {
+                return res.status(400).json({message:'can fetch data from Token'});
             }
         });
         next();
