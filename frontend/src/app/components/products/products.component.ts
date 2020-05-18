@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 // import comp_products from '../scraped-json-products/result-comp-acs.json'
 // import grocery_products from '../scraped-json-products/result-grofers.json'
 // import shoes_products from '../scraped-json-products/result-shoes.json'
-import { MyserviceService } from '../myservice.service';
+import { MyserviceService } from '../../services/myservice.service';
 
 @Component({
   selector: 'app-products',

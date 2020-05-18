@@ -1,4 +1,4 @@
-import { MyserviceService } from './myservice.service';
+import { MyserviceService } from './services/myservice.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,19 +16,19 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { routes } from './app.router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterUserComponent } from './register-user/register-user.component';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { ProductsComponent } from './products/products.component';
-import { CartComponent } from './cart/cart.component';
-import { HeaderComponent } from './header/header.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SliderComponent } from './slider/slider.component';
-import { SpinnerComponent } from './spinner/spinner.component';
+import { RegisterUserComponent } from './components/register-user/register-user.component';
+import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProductsComponent } from './components/products/products.component';
+import { CartComponent } from './components/cart/cart.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DEFAULT_INTERPOLATION_CONFIG } from '@angular/compiler/src/ml_parser/interpolation_config';
-import { MyserviceService } from '../myservice.service';
+import { MyserviceService } from '../../services/myservice.service';
 
 @Component({
   selector: 'app-cart',
