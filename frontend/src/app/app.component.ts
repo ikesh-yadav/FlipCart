@@ -1,4 +1,4 @@
-import { MyserviceService } from './myservice.service';
+import { MyserviceService } from './services/myservice.service';
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { MediaObserver, MediaChange } from "@angular/flex-layout";
 import { Subscription } from 'rxjs';
