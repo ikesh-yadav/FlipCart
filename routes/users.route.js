@@ -247,6 +247,8 @@ function verifyToken(req,res,next){
             if(tokendata){
                 req.body["decodedToken"] = tokendata;
                 req.body["email"] = tokendata.email;               
+            }else {
+                return res.status(400).json({message:'can fetch data from Token'});
             }
         });
         next();
