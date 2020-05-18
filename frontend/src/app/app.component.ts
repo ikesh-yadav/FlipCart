@@ -30,7 +30,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   async getUser() {
     if(localStorage.getItem('token') != null ) {
-     await this.myService.getUserName()
+     await this.myService.getUserData()
       .subscribe(
         data =>{
           this.username = data['first'].toString();

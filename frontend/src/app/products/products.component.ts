@@ -85,4 +85,26 @@ export class ProductsComponent implements OnInit {
   goToCart() {
     this.router.navigate(['/cart']);
   }
+
+  isLoggedIn() {
+    if(localStorage.getItem('token') != null){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  add_cart_db(id){
+    console.log(id);
+    this._myservice.updateUserData(id)
+      .subscribe(
+          (data) => {
+            console.log(data);
+          },
+          (error) => { console.log("FAILURE :(") },
+      );
+  }
+
+
 }

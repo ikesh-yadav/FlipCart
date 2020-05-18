@@ -70,7 +70,8 @@
             <p>{{product.description}}</p>
           </div>
           <div class="offset-md-4 col-md-4">
-            <button class="btn btn-primary btn-sm">Add To Cart</button>
+            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == false " >Login to Add To Cart</button>
+            <button class="btn btn-primary btn-sm" *ngIf=" isLoggedIn() == true " (click) = "add_cart_db(product._id)" >Add To Cart</button>
           </div>
         </div>
       </div>

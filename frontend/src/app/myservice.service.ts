@@ -30,7 +30,7 @@ export class MyserviceService {
       );
   }
 
-  getUserName() {
+  getUserData() {
       return this._http.get('https://flipcart-meanapp.herokuapp.com/api/users/email?token='+localStorage.getItem('token'), {
         observe : 'body',
       });
@@ -40,6 +40,16 @@ export class MyserviceService {
     return this._http.get('https://flipcart-meanapp.herokuapp.com/api/products/category/'+category, {
         observe : 'body',
       });
+  }
+
+  updateUserData(id) {
+    return this._http.post('https://flipcart-meanapp.herokuapp.com/api/users/update?token='+ localStorage.getItem('token'),
+    {
+      "cart" : [id]
+    },
+    {
+      observe: 'body'
+    });
   }
 
 }
