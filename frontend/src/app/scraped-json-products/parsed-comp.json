@@ -1,0 +1,217 @@
+[{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97caa"
+  },
+  "name": "Samsung Galaxy M31 (Ocean Blue, 6GB RAM, 128GB Storage)",
+  "price": 16999,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/41+xWzgV8jL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cab"
+  },
+  "name": "boAt Rugged v3 Extra Tough Unbreakable Braided Micro USB Cable 1.5 Meter (Black)",
+  "price": 249,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/41SDfuK7L2L._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cac"
+  },
+  "name": "Mi USB Cable 120cm (Black)",
+  "price": 229,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/31waIBczZaL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cad"
+  },
+  "name": "MemeHo® Smart Multi-Purpose Laptop Table with Dock Stand/Study Table/Bed Table/Foldable and Portable/Ergonomic & Rounded Edges/Non-Slip Legs(Black)",
+  "price": 869,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/415bCBvZjkL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cae"
+  },
+  "name": "Mi Smart Band 4- India's No.1 Fitness Band, Up-to 20 Days Battery Life, Color AMOLED Full-Touch Screen, Waterproof with Music Control and Unlimited Watch Faces",
+  "price": 2299,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/41+Y1oz4TML._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97caf"
+  },
+  "name": "Mi Earphone Basic with Ultra deep bass and mic (Black)",
+  "price": 399,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/3131ktf-UTL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cb0"
+  },
+  "name": "AmazonBasics Nylon Braided USB A to Lightning Compatible Cable - Apple MFi Certified - Dark Grey (3 Feet/0.9 Meter)",
+  "price": 799,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/41TEawIMRfL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cb1"
+  },
+  "name": "Realme Buds Wireless",
+  "price": 1799,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/41ZCYvl4noL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cb2"
+  },
+  "name": "AmazonBasics High-Speed HDMI Cable, 6 Feet - Supports Ethernet, 3D, 4K video,Black",
+  "price": 379,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/41bCxnHksnL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cb3"
+  },
+  "name": "Mi 20000mAH Li-Polymer Power Bank 2i (Sandstone Black) with 18W Fast Charging",
+  "price": 1499,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/31fgiauy3iL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cb4"
+  },
+  "name": "Mi 2-in-1 USB Cable (Micro USB to Type-C) 100cm",
+  "price": 269,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/314RTRrgm-L._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cb5"
+  },
+  "name": "Mi India Standard Charger 5V 2A",
+  "price": 399,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/314WOOlN5NL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cb6"
+  },
+  "name": "Gizga Essentials Laptop Power Cable Cord- 3 Pin Adapter Isi Certified(1 Meter/3.3 Feet)",
+  "price": 189,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/418JA+QQOFL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cb7"
+  },
+  "name": "JioFi JMR541 150Mbps Wireless 4G Portable Router",
+  "price": 1749,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/21vaB52p77L._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cb8"
+  },
+  "name": "AmazonBasics USB Type-C to USB-A 2.0 Male Cable - 3 Feet (0.9 Meters) - Black",
+  "price": 369,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/31-BRsjrvDL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cb9"
+  },
+  "name": "Pampers Active Baby Diapers, Small, 46 Count",
+  "price": 689,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/51O6YUDm95L._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cba"
+  },
+  "name": "OnePlus 7T (Glacier Blue, 8GB RAM, Fluid AMOLED Display, 128GB Storage, 3800mAH Battery)",
+  "price": 34999,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/41CK68JShbL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cbb"
+  },
+  "name": "HP 680 Ink Cartridges Combo Pack (1 Black Cartridge + 1 tri-Color Cartridge)",
+  "price": 1232,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/51VOTbTQziL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cbc"
+  },
+  "name": "Camlin Kokuyo Fabrica Acrylic Ultra Color, 15ml, 10 Shades",
+  "price": 200,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/41IZSKLA5VL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cbd"
+  },
+  "name": "AmazonBasics Apple Certified Lightning to USB Charge and Sync Cable, 3 Feet (0.9 Meters) - White",
+  "price": 599,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/31bG3Rnr+tL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cbe"
+  },
+  "name": "Vivo U20 (Blazing Blue, Snapdragon 675 AIE, 6GB RAM, 64GB",
+  "price": 12990,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/31kLWvXbGrL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cbf"
+  },
+  "name": "Samsung EVO Plus 64GB microSDXC UHS-I U3 100MB/s Full HD & 4K UHD Memory Card with Adapter (MB-MC64GA)",
+  "price": 849,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/31dOx90fYuL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cc0"
+  },
+  "name": "Zinq Technologies Nylon Braided Micro USB Cable - 4.9 Feet (1.5 Meters) - (Silver)",
+  "price": 179,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/31VkyLcwCvL._AC_US160_.jpg",
+  "rating": 4,
+  "category": "electronics"
+},{
+  "_id": {
+    "$oid": "5ec20a6f5eda037b60c97cc1"
+  },
+  "name": "boAt Indestructible USB Type-C to USB-A 2.0 Male Cable for Type C Phones, 1 Meter (3.3 Feet) -(Black)",
+  "price": 349,
+  "image": "https://images-eu.ssl-images-amazon.com/images/I/41alINWQKXL._AC_US160_.jpg",
+  "rating": 0,
+  "category": "electronics"
+}]
