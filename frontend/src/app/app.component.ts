@@ -24,6 +24,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('userdata');
+    localStorage.removeItem('cart');
     this._router.navigate(['/home']);
     this.username = '';
   }
@@ -35,6 +37,8 @@ export class AppComponent implements OnInit, OnDestroy {
         data =>{
           this.username = data['first'].toString();
           this.userdata = data;
+          localStorage.setItem('userdata', JSON.stringify(data));
+          localStorage.setItem('cart', JSON.stringify(data["cart"]));
           console.log(this.username);
           console.log(this.userdata);
        },

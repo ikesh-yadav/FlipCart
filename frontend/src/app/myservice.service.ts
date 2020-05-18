@@ -42,16 +42,18 @@ export class MyserviceService {
       });
   }
 
-  updateUserData(id) {
+  getProductsById(id) {
+    return this._http.get('https://flipcart-meanapp.herokuapp.com/api/products/'+id, {
+        observe : 'body',
+      });
+  }
+
+  updateUserCart(cartProducts) {
     return this._http.post('https://flipcart-meanapp.herokuapp.com/api/users/update?token='+ localStorage.getItem('token'),
     {
-      "cart" : [id]
+      "cart" : cartProducts
     },
     {
-      headers : {
-        "Access-Control-Allow-Origin": "*" ,
-        "Vary": "Origin"
-      },
       observe : 'body'
     });
   }

@@ -65,23 +65,36 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
 
+    /*
+    let userdata = JSON.parse(localStorage.getItem('userdata'));
+
+    if(userdata !== null){
+      this.cartProducts = userdata.cart;
+    }
+    */
+
+    this.products = []
+
   }
 
-  addToCart(index){
-    let product = this.products[index];
-    let cartData = [];
-    let data = localStorage.getItem('cart');
-    if(data !== null){
-      cartData = JSON.parse(data);
-    }
-    cartData.push(product);
-    this.updateCartData(cartData);
-    localStorage.setItem('cart', JSON.stringify(cartData));
-    this.products[index].isAdded = true;
-  }
-  updateCartData(cartData) {
-    this.cartProducts = cartData;
-  }
+  // addToCart(index){
+
+  //   // this.add_cart_db(id);
+
+  //   let product = this.products[index];
+  //   let cartData = [];
+  //   let data = localStorage.getItem('cart');
+  //   if(data !== null){
+  //     cartData = JSON.parse(data);
+  //   }
+  //   cartData.push(product);
+  //   this.updateCartData(cartData);
+  //   localStorage.setItem('cart', JSON.stringify(cartData));
+  //   this.products[index].isAdded = true;
+  // }
+  // updateCartData(cartData) {
+  //   this.cartProducts = cartData;
+  // }
   goToCart() {
     this.router.navigate(['/cart']);
   }
@@ -97,7 +110,8 @@ export class ProductsComponent implements OnInit {
 
   add_cart_db(id){
     console.log(id);
-    this._myservice.updateUserData(id)
+    this.cartProducts.push(id);
+    this._myservice.updateUserCart(this.cartProducts)
       .subscribe(
           (data) => {
             console.log(data);

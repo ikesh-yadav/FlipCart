@@ -28,16 +28,15 @@
         (click) = "payBill()">
         <svg-icon src="../../assets/email.svg" [svgStyle]="{ 'width.px':24, 'height.px':24  }"></svg-icon>
         Checkout :
-        <span *ngIf="!cartProducts.length"><strong>Rs 0</strong></span>
-        <span *ngIf="cartProducts.length"><strong>Rs {{bill}}</strong></span>
+        <span><strong>Rs {{ bill }}</strong></span>
     </button>
 </div>
 
 
   <div >
-  <div class="cart-product-container container row" *ngFor="let item of cartProducts; let i=index">
+  <div class="cart-product-container container row" *ngFor="let item of actual_product; let i=index">
     <mat-card class="col-md-5">
-      <img [src]="item.img" alt="" class="custom-image-style">
+      <img [src]="item.image" alt="" class="custom-image-style">
     </mat-card>
 
     <mat-card class="cart-product-desc col-md-3">
@@ -53,7 +52,7 @@
       mat-raised-button
       color="primary"
       class="login-button"
-      (click) = "removeItem(i)">
+      (click) = "removeItem(item._id)">
       <svg-icon src="../../assets/delete.svg" [svgStyle]="{ 'width.px':24, 'height.px':24  }"></svg-icon>
       Delete
     </button>
