@@ -17,22 +17,24 @@
   padding-right: 20px;
 }
 
-a {
+a, a * {
   text-decoration: none;
-  color: rgb(255,225,53);
+  color: white;
 }
 
-a:hover {
-  color: rgb(255, 184, 66);
+a:hover, a:hover * {
+  /* /color: rgb(255, 184, 66); */
+  color:rgb(255,225,53);
+  background-color: rgba(4, 122, 213, 0.568);
 }
 
-.col-md-10 {
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-  max-height: 100%;
-}
+ .col-md-10 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
 
 

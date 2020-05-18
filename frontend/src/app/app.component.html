@@ -26,12 +26,12 @@
         </div>
         <div class="menu buttons" fxLayoutAlign="space-between center" >
 
-          <div *ngIf=" username != '' " class="buttons">
+          <a *ngIf=" username != '' " class="buttons">
             <button mat-button (click)="logout()" >
               <mat-icon>power_settings_new</mat-icon>
               Logout
             </button>
-          </div>
+          </a>
 
           <a href="{{listItems[4].link}}">
             <button mat-icon-button >

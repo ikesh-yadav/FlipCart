@@ -37,7 +37,7 @@ export class AppComponent implements OnInit, OnDestroy {
         data =>{
           this.username = data['first'].toString();
           this.userdata = data;
-          localStorage.setItem('userdata', JSON.stringify(data));
+          // localStorage.setItem('userdata', JSON.stringify(data));
           localStorage.setItem('cart', JSON.stringify(data["cart"]));
           console.log(this.username);
           console.log(this.userdata);
@@ -57,23 +57,23 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.listItems = [
 			{
 				name: "Home",
-				link: "/home"
+				link: "#/home"
 			},
 			{
 				name: "Products",
-				link: "/products"
+				link: "#/products"
       },
 			{
 				name: "About",
-				link: "/about"
+				link: "#/about"
       },
       {
 				name: "Login",
-				link: "/register-user"
+				link: "#/register-user"
       },
       {
 				name: "Cart",
-				link: "/cart"
+				link: "#/cart"
 			},
 		];
   }
