@@ -31,7 +31,7 @@ mongoose.connection.on("error", (err) => {
 
 //adding middleware-cors
 app.use(cors({
-    // origin:'http://localhost:4200'
+    origin:'http://localhost:4200'
 }));
 
 //adding middware-body-parse

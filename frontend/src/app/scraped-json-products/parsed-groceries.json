@@ -1,0 +1,391 @@
+[{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cc2"
+  },
+  "name": "Aashirvaad Shudh Chakki Whole Wheat Att…",
+  "price": 409,
+  "qty": "10 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_333324.jpg?ts=1588911583",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cc3"
+  },
+  "name": "Surf Excel Matic Front Load Detergent Powder (Carton…",
+  "price": 410,
+  "qty": "2 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_392.jpg",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cc4"
+  },
+  "name": "Sunpure Refined Sunflower Oil (Pouch…",
+  "price": 109,
+  "qty": "1 l",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_39410.jpg?ts=1562317907",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cc5"
+  },
+  "name": "Nandini Pure Cow Ghee",
+  "price": 471,
+  "qty": "1 l",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_37078.jpg?ts=1579848823",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cc6"
+  },
+  "name": "GTS Super Vada Kolam Ric…",
+  "price": 1804,
+  "qty": "25 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_375240.jpg",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cc7"
+  },
+  "name": "Family Farm Super Premium 25 kg Raw Sona…",
+  "price": 1437,
+  "qty": "25 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_400256.jpg?ts=1575013411",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cc8"
+  },
+  "name": "Pampers Baby Dry Pants Diaper (XL) - Pack of 5…",
+  "price": 902,
+  "qty": "56 units",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_391084.jpg?ts=1528177799",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cc9"
+  },
+  "name": "Grofers Mother's Choice American Almond…",
+  "price": 456,
+  "qty": "500 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_389719.jpg?ts=1575012808",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cca"
+  },
+  "name": "Grofers Mother's Choice W320 Cashew…",
+  "price": 421,
+  "qty": "500 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_389714.jpg?ts=1575012807",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ccb"
+  },
+  "name": "Boost 3x Stamina Health Drink (Refill…",
+  "price": 326,
+  "qty": "750 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_81262.jpg",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ccc"
+  },
+  "name": "Daawat Rozana Super Basmati Ric…",
+  "price": 349,
+  "qty": "5 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_10974.jpg?ts=1544768843",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ccd"
+  },
+  "name": "India Gate Feast Rozzana Basmati Ric…",
+  "price": 88,
+  "qty": "1 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_36183.jpg?ts=1562924232",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cce"
+  },
+  "name": "Parle-G Gold Biscuit",
+  "price": 92,
+  "qty": "1 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_387474.jpg",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ccf"
+  },
+  "name": "Wipro Safewash Matic Top Load Premium Liquid Det…",
+  "price": 255,
+  "qty": "2 l",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_410874.jpg?ts=1576832925",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cd0"
+  },
+  "name": "Whisper Ultra Clean Sanitary Pads (XL+…",
+  "price": 365,
+  "qty": "44 units",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_393222.jpg?ts=1565763933",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cd1"
+  },
+  "name": "SaveMore Handwash",
+  "price": 69,
+  "qty": "750 ml",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_409552.jpg?ts=1576564093",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cd2"
+  },
+  "name": "Madhur Sulphurless Sugar",
+  "price": 238,
+  "qty": "5 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_14162.jpg?ts=1587365512",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cd3"
+  },
+  "name": "Family Farm Moong Dal (Dhuli…",
+  "price": 156,
+  "qty": "1 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_400099.jpg?ts=1560147376",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cd4"
+  },
+  "name": "Sunpure Health Rice Bran Oil (Pouch…",
+  "price": 113,
+  "qty": "1 l",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_320667.jpg?ts=1589366210",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cd5"
+  },
+  "name": "Safal Peanuts",
+  "price": 155,
+  "qty": "1 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_369565.jpg?ts=1586784127",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cd6"
+  },
+  "name": "Vim Lemon Dishwash Gel (Bottle…",
+  "price": 140,
+  "qty": "750 ml",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_18575.jpg?ts=1565763930",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cd7"
+  },
+  "name": "Family Farm White Urad Gota/Gol…",
+  "price": 139,
+  "qty": "1 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_400197.jpg?ts=1560147367",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cd8"
+  },
+  "name": "Parle Hide & Seek Chocolate Chip Cookie - …",
+  "price": 80,
+  "qty": "2x200 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_328740.jpg?1473748676",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cd9"
+  },
+  "name": "Sunfeast Dark Fantasy Choco Fills Cookie - Pack …",
+  "price": 53,
+  "qty": "2x75 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_291981.jpg",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cda"
+  },
+  "name": "Family Farm Sugar",
+  "price": 48,
+  "qty": "1 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_400105.jpg?ts=1586786033",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cdb"
+  },
+  "name": "Grofers Mother's Choice Refined Suga…",
+  "price": 244,
+  "qty": "5 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_389575.jpg?ts=1579066495",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cdc"
+  },
+  "name": "Grofers Mother's Choice Refined Suga…",
+  "price": 50,
+  "qty": "1 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_389573.jpg?ts=1580022018",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cdd"
+  },
+  "name": "Chakki Atta",
+  "price": 334,
+  "qty": "10 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_388639.jpg?ts=1586785990",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cde"
+  },
+  "name": "Chakki Atta",
+  "price": 177,
+  "qty": "5 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_388638.jpg?ts=1586785990",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97cdf"
+  },
+  "name": "Organic Tattva Wheat Atta",
+  "price": 256,
+  "qty": "5 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_86973.jpg",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ce0"
+  },
+  "name": "Grofers Mother's Choice Finest American Almond…",
+  "price": 175,
+  "qty": "200 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_391041.jpg?ts=1575012665",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ce1"
+  },
+  "name": "Family Farm Almonds",
+  "price": 406,
+  "qty": "500 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_400111.jpg?ts=1565612904",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ce2"
+  },
+  "name": "Family Farm Almonds",
+  "price": 166,
+  "qty": "200 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_410363.jpg?ts=1579330928",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ce3"
+  },
+  "name": "Grofers Mother's Choice W320 Cashew…",
+  "price": 173,
+  "qty": "200 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_389713.jpg?ts=1575012807",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ce4"
+  },
+  "name": "Grofers Mother's Choice Sendha Sal…",
+  "price": 19,
+  "qty": "200 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_389970.jpg?ts=1575012711",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ce5"
+  },
+  "name": "Tata Salt",
+  "price": 19,
+  "qty": "1 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_105.jpg?ts=1574316670",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ce6"
+  },
+  "name": "Akar Crystal Salt",
+  "price": 19,
+  "qty": "1 kg",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_33505.jpg?ts=1533718774",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ce7"
+  },
+  "name": "Grofers Mother's Choice Kishmish/Rais…",
+  "price": 179,
+  "qty": "500 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_304377.jpg?ts=1575012852",
+  "category": "groceries",
+  "rating": 0
+},{
+  "_id": {
+    "$oid": "5ec20b265eda037b60c97ce8"
+  },
+  "name": "Grofers Mother's Choice Black Kishmish/Rais…",
+  "price": 86,
+  "qty": "200 g",
+  "image": "https://cdn.grofers.com/app/images/products/normal/pro_389724.jpg?ts=1575012808",
+  "category": "groceries",
+  "rating": 0
+}]

@@ -1,0 +1,481 @@
+[{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c7a"
+  },
+  "name": "Shoes Wonder-13 Grey Firozi Mesh Shoes",
+  "brand": "ASIAN",
+  "price": 430,
+  "image": "https://m.media-amazon.com/images/I/61utX8kBDlL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c7b"
+  },
+  "name": "Men's Sneakers",
+  "brand": "Sparx",
+  "price": 820,
+  "image": "https://m.media-amazon.com/images/I/81R4C7Q2REL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c7c"
+  },
+  "name": "Shoes SuperfitNavy BlueGry Men Sports Shoes",
+  "brand": "ASIAN",
+  "price": 474,
+  "image": "https://m.media-amazon.com/images/I/61TSfjlL3tL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c7d"
+  },
+  "name": "Men's Xtream Running Shoes",
+  "brand": "Fusefit",
+  "price": 699,
+  "image": "https://m.media-amazon.com/images/I/71pfHrjH0RL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c7e"
+  },
+  "name": "Men's Mesh Running Shoes",
+  "brand": "Sparx",
+  "price": 610,
+  "image": "https://m.media-amazon.com/images/I/71e95dZ2-BL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c7f"
+  },
+  "name": "Men's Vega-4 Running Shoes",
+  "brand": "Bourge",
+  "price": 549,
+  "image": "https://m.media-amazon.com/images/I/812YNmgC-bL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c80"
+  },
+  "name": "Men's Running Shoes",
+  "brand": "Sparx",
+  "price": 874,
+  "image": "https://m.media-amazon.com/images/I/614GrMqc3qL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c81"
+  },
+  "name": "Men's Mesh Sports Running Shoes HYDRA-46",
+  "brand": "Lancer",
+  "price": 499,
+  "image": "https://m.media-amazon.com/images/I/61QilOJjc8L._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c82"
+  },
+  "name": "Bullet-02 Running Shoes,Sports Shoes,Gym Shoes,Training Shoes,Walking Shoes for Men",
+  "brand": "ASIAN",
+  "price": 499,
+  "image": "https://m.media-amazon.com/images/I/71M5-l4H-aL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c83"
+  },
+  "name": "Men's Running Shoes",
+  "brand": "Campus",
+  "price": 799,
+  "image": "https://m.media-amazon.com/images/I/81ebhR0pu1L._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c84"
+  },
+  "name": "Men's Combo Pack Of 3 Synthetic Loafers Shoes - Multicolour",
+  "brand": "TEMPO",
+  "price": 520,
+  "image": "https://m.media-amazon.com/images/I/81SKDJ6YI2L._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c85"
+  },
+  "name": "Men's Flip Flops Thong Sandals",
+  "brand": "FLITE",
+  "price": 169,
+  "image": "https://m.media-amazon.com/images/I/91YznpEHT8L._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c86"
+  },
+  "name": "Men's Sm-323 Dip Canvas Shoes - Black",
+  "brand": "Sparx",
+  "price": 630,
+  "image": "https://m.media-amazon.com/images/I/81OYDQEy9qL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c87"
+  },
+  "name": "Men's House Slippers",
+  "brand": "Relaxo",
+  "price": 109,
+  "image": "https://m.media-amazon.com/images/I/91aisb7EhRL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c88"
+  },
+  "name": "Men's Flip-Flops and House Slippers",
+  "brand": "Sparx",
+  "price": 274,
+  "image": "https://m.media-amazon.com/images/I/71N5nNVg+XL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c89"
+  },
+  "name": "SRV Relax Sports Shoes for Men",
+  "brand": "TRASE",
+  "price": 499,
+  "image": "https://m.media-amazon.com/images/I/714H6k9M2hL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c8a"
+  },
+  "name": "Men's Vega-3 Running Shoes",
+  "brand": "Bourge",
+  "price": 549,
+  "image": "https://m.media-amazon.com/images/I/81swJXNU3cL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c8b"
+  },
+  "name": "Men's Running Shoes",
+  "brand": "Sparx",
+  "price": 600,
+  "image": "https://m.media-amazon.com/images/I/718SPSP6n5L._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c8c"
+  },
+  "name": "Men's Combo Pack of 2 Casual Shoes (Loafers & Sneakers Shoes)",
+  "brand": "Chevit",
+  "price": 379,
+  "image": "https://m.media-amazon.com/images/I/819z2vzNmDL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c8d"
+  },
+  "name": "Men's Boots",
+  "brand": "Unistar",
+  "price": 499,
+  "image": "https://m.media-amazon.com/images/I/81WiDOS8zmL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c8e"
+  },
+  "name": "Men's Vega-2 Running Shoes",
+  "brand": "Bourge",
+  "price": 549,
+  "image": "https://m.media-amazon.com/images/I/71xjK1bovUL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c8f"
+  },
+  "name": "Men SM-421 Sports Shoes",
+  "brand": "Sparx",
+  "price": 990,
+  "image": "https://m.media-amazon.com/images/I/812PENrS3JL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c90"
+  },
+  "name": "Warrior 88-46HSTG Olive Green Men Canvas Jungle Boot",
+  "brand": "Liberty",
+  "price": 1899,
+  "image": "https://m.media-amazon.com/images/I/81HrvPiJbCL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c91"
+  },
+  "name": "Cute Grey Pink Walking Shoes,Running Shoes,Sports Shoes for Women …",
+  "brand": "ASIAN",
+  "price": 464,
+  "image": "https://m.media-amazon.com/images/I/61iKZtIs73L._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c92"
+  },
+  "name": "Men's Running Shoes",
+  "brand": "Bacca Bucci",
+  "price": 464,
+  "image": "https://m.media-amazon.com/images/I/71Nhc6OVWKL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c93"
+  },
+  "name": "Men's EVA Flip-Flops and House Slippers",
+  "brand": "United Colors of Benetton",
+  "price": 370,
+  "image": "https://m.media-amazon.com/images/I/91TqfLBdisL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c94"
+  },
+  "name": "Men's Running Shoes",
+  "brand": "Sparx",
+  "price": 750,
+  "image": "https://m.media-amazon.com/images/I/81uzaz4KjoL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c95"
+  },
+  "name": "Men's Running Shoes",
+  "brand": "Sparx",
+  "price": 917,
+  "image": "https://m.media-amazon.com/images/I/91Ehy7k5TjL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c96"
+  },
+  "name": "Cosco Sports Running Shoes for Men",
+  "brand": "ASIAN",
+  "price": 649,
+  "image": "https://m.media-amazon.com/images/I/71I4zUeFtEL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c97"
+  },
+  "name": "Perfect (CLYMB) Ultra Lite Sport Shoes for Men",
+  "brand": "Ethics",
+  "price": 399,
+  "image": "https://m.media-amazon.com/images/I/61UPUDphtXL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c98"
+  },
+  "name": "Men's Athletic and Outdoor Sandals",
+  "brand": "Sparx",
+  "price": 798,
+  "image": "https://m.media-amazon.com/images/I/71R3hy6ZolL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c99"
+  },
+  "name": "Men's Flip-Flops",
+  "brand": "BAHAMAS",
+  "price": 189,
+  "image": "https://m.media-amazon.com/images/I/A1z2T+2VQsL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c9a"
+  },
+  "name": "Force 10 Black Kids Non-Leather School Shoes",
+  "brand": "Liberty",
+  "price": 699,
+  "image": "https://m.media-amazon.com/images/I/81DFuCWjTiL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c9b"
+  },
+  "name": "Men's Driving Suede Check Loafers",
+  "brand": "Big Fox",
+  "price": 449,
+  "image": "https://m.media-amazon.com/images/I/61VDxaZRYRL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c9c"
+  },
+  "name": "Men's Formal Shoes",
+  "brand": "Centrino",
+  "price": 499,
+  "image": "https://m.media-amazon.com/images/I/81KIRWY+kJL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c9d"
+  },
+  "name": "Men's Comfort Casual Loafers",
+  "brand": "KNOOS",
+  "price": 499,
+  "image": "https://m.media-amazon.com/images/I/71AfojFejBL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c9e"
+  },
+  "name": "Men's MultiColored Shoes",
+  "brand": "Ethics",
+  "price": 399,
+  "image": "https://m.media-amazon.com/images/I/61RN7hIcbvL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97c9f"
+  },
+  "name": "Latest Collection, Comfortable & Fashionable Sneaker Shoes for Women's and Girl's",
+  "brand": "Denill",
+  "price": 449,
+  "image": "https://m.media-amazon.com/images/I/617LKKeOZKL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97ca0"
+  },
+  "name": "Women's Flip-Flops",
+  "brand": "FLITE",
+  "price": 174,
+  "image": "https://m.media-amazon.com/images/I/81NEe9SAT2L._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97ca1"
+  },
+  "name": "Men's Canvas Casual Loafers Shoes, Pack of 5 Combo",
+  "brand": "Chevit",
+  "price": 849,
+  "image": "https://m.media-amazon.com/images/I/81wt+S2+ntL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97ca2"
+  },
+  "name": "Men's Aero Running Shoes",
+  "brand": "Power",
+  "price": 1122,
+  "image": "https://m.media-amazon.com/images/I/81gvsSLYc-L._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97ca3"
+  },
+  "name": "Women's Mesh Running Shoes",
+  "brand": "Sparx",
+  "price": 840,
+  "image": "https://m.media-amazon.com/images/I/81V+MalWsSL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97ca4"
+  },
+  "name": "Fashion-13 Running Shoes,Gym Shoes,Canvas Shoes,Training Shoes,Sports Shoes for Women",
+  "brand": "ASIAN",
+  "price": 471,
+  "image": "https://m.media-amazon.com/images/I/7139bb4+gNL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97ca5"
+  },
+  "name": "Men's Canvas Loafer",
+  "brand": "Chevit",
+  "price": 284,
+  "image": "https://m.media-amazon.com/images/I/81yXX9+yfkL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97ca6"
+  },
+  "name": "Shot White Sports Shoes for Men (Size: 6-12 IND/UK)",
+  "brand": "Touchwood",
+  "price": 599,
+  "image": "https://m.media-amazon.com/images/I/61vGr0CBB5L._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97ca7"
+  },
+  "name": "Men's Sx0406g Running Shoes",
+  "brand": "Sparx",
+  "price": 989,
+  "image": "https://m.media-amazon.com/images/I/81jz7DC0hmL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97ca8"
+  },
+  "name": "Men's Mesh Loafers",
+  "brand": "Sparx",
+  "price": 809,
+  "image": "https://m.media-amazon.com/images/I/71zRy+--GIL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+},{
+  "_id": {
+    "$oid": "5ec209835eda037b60c97ca9"
+  },
+  "name": "Doctor Ortho Slippers for Women.",
+  "brand": "DOCTOR EXTRA SOFT",
+  "price": 299,
+  "image": "https://m.media-amazon.com/images/I/61+mgIFJ5vL._AC_UL320_.jpg",
+  "rating": 0,
+  "category": "shoes"
+}]
