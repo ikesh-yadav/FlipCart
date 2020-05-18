@@ -29,6 +29,8 @@ mongoose.connection.on("error", (err) => {
     }
 });
 
+cors.AllowAnyOrigin();
+
 //adding middleware-cors
 app.use(cors({
     // origin:'http://localhost:4200'
