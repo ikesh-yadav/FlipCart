@@ -246,10 +246,10 @@ function verifyToken(req,res,next){
             }
             if(tokendata){
                 req.body["decodedToken"] = tokendata;
-                req.body["email"] = tokendata.email;
-                next();
+                req.body["email"] = tokendata.email;               
             }
         });
+        next();
     }else {
         return res.status(403).json({message:'Forbidden:Token required'});
     }   
