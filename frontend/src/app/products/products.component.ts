@@ -97,6 +97,16 @@ export class ProductsComponent implements OnInit {
   // }
   goToCart() {
     this.router.navigate(['/cart']);
+    setTimeout(function(){
+       location.reload();
+       console.log("R1");
+       setTimeout(function(){
+          location.reload();
+          console.log("R2");
+       }, 1000);
+    }, 1000);
+
+
   }
 
   isLoggedIn() {
