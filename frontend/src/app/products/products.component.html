@@ -58,22 +58,23 @@
 <hr>
 
 <div class="container" *ngIf = " category == 0 ">
+  Hot<hr>
   <div class="row">
-      <div class="col-md-4 col-centered" *ngFor="let product of products;let i=index">
-        <div class="card card-block">
-          <img [src]="product.img" alt="" class="custom-image-style">
-          <div class="product-desc-container row">
-            <div class="container">
-              <p><strong>{{product.title}}</strong></p>
-              <p><strong>Rs {{product.price}}</strong></p>
-              <p>{{product.description}}</p>
-            </div>
-            <div class="offset-md-4 col-md-4">
-              <button class="btn btn-primary btn-sm" (click)="addToCart(i)" [disabled]="product.isAdded===true">Add To Cart</button>
-            </div>
+    <div class="col-md-4 col-centered" *ngFor="let product of phot;let i=index">
+      <div class="card card-block">
+        <img [src]="product.image" alt="" class="custom-image-style">
+        <div class="product-desc-container row">
+          <div class="container">
+            <p><strong>{{product.title}}</strong></p>
+            <p><strong>Rs {{product.price}}</strong></p>
+            <p>{{product.description}}</p>
+          </div>
+          <div class="offset-md-4 col-md-4">
+            <button class="btn btn-primary btn-sm">Add To Cart</button>
           </div>
         </div>
       </div>
+    </div>
   </div>
 </div>
 
@@ -102,7 +103,7 @@
 <div class="container" *ngIf = " category == 2 ">
   Shoes<hr>
   <div class="row">
-    <div class="col-md-4 col-centered" *ngFor="let product of shoesData;let i=index">
+    <div class="col-md-4 col-centered" *ngFor="let product of pshoes;let i=index">
       <div class="card card-block">
         <img [src]="product.image" alt="" class="custom-image-style">
         <div class="product-desc-container row">
@@ -124,7 +125,7 @@
 <div class="container" *ngIf = " category == 3 ">
   Computers <hr>
   <div class="row">
-    <div class="col-md-4 col-centered" *ngFor="let product of compData;let i=index">
+    <div class="col-md-4 col-centered" *ngFor="let product of pcomp;let i=index">
       <div class="card card-block">
         <img [src]="product.image" alt="" class="custom-image-style">
         <div class="product-desc-container row">
@@ -145,7 +146,7 @@
 <div class="container" *ngIf = " category == 4 ">
   Grocery<hr>
   <div class="row">
-    <div class="col-md-4 col-centered" *ngFor="let product of groceryData;let i=index">
+    <div class="col-md-4 col-centered" *ngFor="let product of pgrocery;let i=index">
       <div class="card card-block">
         <img [src]="product.image" alt="" class="custom-image-style">
         <div class="product-desc-container row">
