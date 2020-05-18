@@ -1,5 +1,6 @@
 .custom-image-style {
-  width: 40%;
+  max-width: 70%;
+  max-height: 70%;
   display: block;
   margin: 0 auto;
 }
@@ -33,12 +34,12 @@
 .card-block {
   padding: 1.25rem;
 }
-
+/*
 img {
   width: 150px;
   height: 150px;
 }
-
+*/
 .header span {
   padding: 0px 5px;
   font-size: medium;

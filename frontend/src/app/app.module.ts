@@ -29,6 +29,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     HeaderComponent,
     SliderComponent,
     SpinnerComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

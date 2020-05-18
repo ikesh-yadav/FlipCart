@@ -33,31 +33,31 @@
 </div>
 
 
-  <div >
+<div>
   <div class="cart-product-container container row" *ngFor="let item of actual_product; let i=index">
-    <mat-card class="col-md-5">
-      <img [src]="item.image" alt="" class="custom-image-style">
-    </mat-card>
-
-    <mat-card class="cart-product-desc col-md-3">
-      <div><p>{{item.title}}</p></div>
-      <div><p><strong>Rs {{item.price*item.qt}}</strong></p></div>
-    </mat-card>
-    <mat-card class="edit-cart-container col-md-2">
-      <div><p>Quantity:</p></div>
-      <input (change)="updateTotal()" [(ngModel)]="item.qt" type="number" class="form-control">
-    </mat-card>
-
-    <button
-      mat-raised-button
-      color="primary"
-      class="login-button"
-      (click) = "removeItem(item._id)">
-      <svg-icon src="../../assets/delete.svg" [svgStyle]="{ 'width.px':24, 'height.px':24  }"></svg-icon>
-      Delete
-    </button>
-
-
+    <div class="row">
+      <mat-card class="col-md-6" >
+        <div class="image-container"><img [src]="item.image" alt="" class="custom-image-style"></div>
+      </mat-card>
+      <mat-card class="cart-product-desc col-md-6">
+        <div fxLayout="column" fxLayoutAlign="center stretch" >
+          <div><p>{{item.title}}</p></div>
+          <div><p><strong>Rs {{item.price*item.qt}}</strong></p></div>
+          <div><p>Quantity:</p></div>
+          <div><p><input (change)="updateTotal()" [(ngModel)]="item.qt" type="number" class="form-control qt-input"></p></div>
+        </div>
+      </mat-card>
+    </div>
+    <div class="row">
+      <button
+          mat-raised-button
+          color="primary"
+          class="login-button"
+          (click) = "removeItem(item._id)">
+          <svg-icon src="../../assets/delete.svg" [svgStyle]="{ 'width.px':24, 'height.px':24  }"></svg-icon>
+          Delete
+        </button>
+    </div>
   </div>
 </div>
 

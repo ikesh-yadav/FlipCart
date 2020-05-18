@@ -1,3 +1,8 @@
+* {
+  /* align-items: center; */
+  text-align: center;
+}
+
 .cart-product-container {
   display:flex;
   width: 90%;
@@ -5,8 +10,9 @@
 }
 
 .cart-product-container img {
-  width:75%;
-  height:75%;
+  flex: 1;
+  max-width:50%;
+  max-height:50%;
 }
 
 .bill-container{
@@ -29,18 +35,17 @@
 }
 
 input {
-  height:30px;
+  min-height:30px;
 }
 
 #xbutton {
-  height:30px;
+  min-height:30px;
   padding-top:45px;
 }
 
 .login-button {
-  margin-top: 20px;
   display: block;
-  width: 40%;
+  min-width: 40%;
   margin: 20px auto;
 }
 
@@ -50,4 +55,19 @@ input {
   width: 60%;
   margin: 20px auto;
   font-size: larger;
+}
+
+.row {
+  width:100%;
+}
+
+.cart-product-desc * {
+  vertical-align: middle;
+}
+
+.qt-input {
+  min-width:10%;
+  max-width:20%;
+  flex:1;
+  margin:0 auto;
 }
