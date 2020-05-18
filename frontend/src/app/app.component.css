@@ -37,4 +37,9 @@ a:hover, a:hover * {
     max-height: 100%;
   }
 
+  app-footer {
+    display:block;
+    position: absolute;
+  }
+
 

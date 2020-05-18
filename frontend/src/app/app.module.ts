@@ -1,3 +1,5 @@
+import { DataPassingService } from './services/dataPassing/data-passing.service';
+import { LoadingService } from './services/Loading/loading.service';
 import { MyserviceService } from './services/myservice.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -17,10 +19,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { routes } from './app.router';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterUserComponent } from './components/register-user/register-user.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
@@ -65,7 +68,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     AngularSvgIconModule.forRoot()
   ],
-  providers: [ MyserviceService,
+  providers: [ MyserviceService,LoadingService, DataPassingService,
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]

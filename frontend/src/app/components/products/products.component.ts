@@ -1,3 +1,4 @@
+import { DataPassingService } from './../../services/dataPassing/data-passing.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -5,7 +6,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 // import comp_products from '../scraped-json-products/result-comp-acs.json'
 // import grocery_products from '../scraped-json-products/result-grofers.json'
 // import shoes_products from '../scraped-json-products/result-shoes.json'
+
 import { MyserviceService } from '../../services/myservice.service';
+import { LoadingService } from './../../services/Loading/loading.service';
 
 @Component({
   selector: 'app-products',
@@ -15,7 +18,7 @@ import { MyserviceService } from '../../services/myservice.service';
 })
 export class ProductsComponent implements OnInit {
 
-  products: any;
+
   cartProducts: any = [];
   title:String = "Products";
   category: any = 0;
@@ -24,12 +27,13 @@ export class ProductsComponent implements OnInit {
   pcomp : any = [];
   pgrocery : any = [];
   phot : any = [];
+  username:String;
 
-  constructor(private router: Router, private _myservice:MyserviceService) {
+  constructor(private router: Router, private _myservice:MyserviceService, private loadingServiceInstance:LoadingService, private DataPassingServiceInstance:DataPassingService) {
 
     this._myservice.getProducts('books')
     .subscribe(
-      data => { this.books = data; },
+      data => { this.books = data; DataPassingServiceInstance.Send({username:this.username, cart:this.cartProducts}) },
       error => { console.log("Error retrieving items p_books"); }
     );
 
@@ -65,17 +69,8 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
 
-    /*
-    let userdata = JSON.parse(localStorage.getItem('userdata'));
-
-    if(userdata !== null){
-      this.cartProducts = userdata.cart;
-    }
-    */
-
-    this.products = []
-
-  }
+    this.cartProducts = JSON.parse(localStorage.getItem('cart'));
+}
 
   // addToCart(index){
 
@@ -95,6 +90,12 @@ export class ProductsComponent implements OnInit {
   // updateCartData(cartData) {
   //   this.cartProducts = cartData;
   // }
+
+      // for(let i in this.cartProducts){
+      //   this.cartProducts[i]["qt"] = 1;
+      //   this.bill = this.bill + this.cartProducts[i].price * this.cartProducts[i].qt;
+      // }
+
   goToCart() {
     this.router.navigate(['/cart']);
     setTimeout(function(){
