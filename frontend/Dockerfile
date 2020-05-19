@@ -5,4 +5,4 @@ RUN npm install
 RUN npm run build --prod
 
 FROM nginx:alpine
-COPY --from=build-step /app/dist/user-login-page /usr/share/nginx/html
+COPY --from=build-step /app/dist/flipcart-frontend /usr/share/nginx/html
