@@ -8,12 +8,14 @@ import { HttpClient, HttpParams} from '@angular/common/http';
 })
 export class UserService {
 
+  // url = 'https://flipcart-meanapp.herokuapp.com';
+  url = '';
   constructor(private _http: HttpClient) { }
 
   submitRegister(body:any) {
     return this._http
       .post(
-        'https://flipcart-meanapp.herokuapp.com/api/users',
+        this.url+'/api/users',
         body,
         {
           observe: 'body'
@@ -24,7 +26,7 @@ export class UserService {
   submitLogin(body:any) {
     return this._http
       .post(
-        'https://flipcart-meanapp.herokuapp.com/api/users/login',
+        this.url+'/api/users/login',
         body,
         {
           observe: 'body'
@@ -33,7 +35,7 @@ export class UserService {
   }
 
   getUserData():Observable<userData> {
-      return this._http.get<userData>('https://flipcart-meanapp.herokuapp.com/api/users/email?token='+localStorage.getItem('token'), {
+      return this._http.get<userData>(this.url+'/api/users/email?token='+localStorage.getItem('token'), {
         observe : 'body',
       });
   }

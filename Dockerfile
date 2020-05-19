@@ -1,10 +1,12 @@
 FROM node:latest
 
-RUN mkdir -p /flipcart
+#RUN mkdir -p /
 
-RUN npm docker-build
+COPY . .
 
-COPY . ./flipcart
+RUN npm run docker-build
+
+# COPY . .
 
 EXPOSE 3000
 
