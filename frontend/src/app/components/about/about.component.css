@@ -1,3 +1,33 @@
 .about-container {
   padding-top:20px;
 }
+
+mat-card {
+  background: rgb(248,232,49);
+  background: radial-gradient(circle, rgba(248,232,49,1) 0%, rgba(247,162,0,1) 100%);
+  min-width: 80%;
+  font-size: large;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 16px rgb(206, 170, 13));
+}
+
+mat-card-content div {
+  background: rgb(93, 167, 221);
+  background: radial-gradient(circle, rgba(117,182,230,1) 37%, rgba(28,144,231,1) 100%);
+  text-align: center;
+  max-width: 60%;
+  min-width: 60%;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 8px rgb(35, 53, 155));
+}
+
+mat-card-content p {
+  margin: 5% auto;
+  text-align: center;
+  font-size: larger;
+}
+
+mat-card-title {
+  text-align: center;
+}

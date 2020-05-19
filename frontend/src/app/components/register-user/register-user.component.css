@@ -31,12 +31,16 @@
 
 .pc {
   /* background-color: rgb(94, 218, 78); */
-  background-color: rgb(218, 204, 78);
+  /* background-color: rgb(218, 204, 78); */
+  background: rgb(248,232,49);
+  background: radial-gradient(circle, rgba(248,232,49,1) 0%, rgba(247,162,0,1) 100%);
 }
 
 .mobile {
   /* background-color: rgb(218, 118, 78); */
-  background-color: rgb(218, 204, 78);
+  /* background-color: rgb(218, 204, 78); */
+  background: rgb(248,232,49);
+  background: radial-gradient(circle, rgba(248,232,49,1) 0%, rgba(247,162,0,1) 100%);
 }
 
 
