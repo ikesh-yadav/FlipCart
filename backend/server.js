@@ -38,7 +38,7 @@ app.use(bodyparser.json());
 
 //static files
 //fetch static files from this location
-app.use(express.static(path.join(__dirname, "/frontend/dist/flipcart-frontend/")));
+app.use(express.static(path.join(__dirname, "./../frontend/dist/flipcart-frontend/")));
 
 app.get("/api", (req,res) => {
     res.sendFile(path.join(__dirname,"/static/api-documentation.html"));

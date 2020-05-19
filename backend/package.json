@@ -1,14 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "FlipCart",
-  "main": "backend/server.js",
+  "description": "backend for FlipCart",
+  "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "main": "node backend/server.js",
-    "build-frontend": "cd frontend && npm run build --prod",
-    "install-frontend": "cd frontend && npm install",
-    "heroku-postbuild": "npm run install-frontend && npm run build-frontend"
+    "start": "node server.js",
+    "main": "node server.js"
   },
   "author": "ikesh",
   "license": "ISC",
