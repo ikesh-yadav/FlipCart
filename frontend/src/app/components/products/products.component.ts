@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user/user.service';
 import { DataPassingService } from './../../services/dataPassing/data-passing.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -18,7 +19,7 @@ import { LoadingService } from './../../services/Loading/loading.service';
 })
 export class ProductsComponent implements OnInit {
 
-
+  Products:any = [];
   cartProducts: any = [];
   title:String = "Products";
   category: any = 0;
@@ -27,13 +28,18 @@ export class ProductsComponent implements OnInit {
   pcomp : any = [];
   pgrocery : any = [];
   phot : any = [];
-  username:String;
+  username:String = '';
 
-  constructor(private router: Router, private _myservice:MyserviceService, private loadingServiceInstance:LoadingService, private DataPassingServiceInstance:DataPassingService) {
+  constructor(private router: Router, private _myservice:MyserviceService, private UserService:UserService) {  }
 
+  catFunc( i ) {
+    this.category = i;
+  }
+
+  ngOnInit() {
     this._myservice.getProducts('books')
     .subscribe(
-      data => { this.books = data; DataPassingServiceInstance.Send({username:this.username, cart:this.cartProducts}) },
+      data => { this.books = data; },
       error => { console.log("Error retrieving items p_books"); }
     );
 
@@ -61,15 +67,20 @@ export class ProductsComponent implements OnInit {
       error => { console.log("Error retrieving items p_hot"); }
     );
 
-  }
+    this.UserService.getUserData()
+    .subscribe(
+      data => { 
+        this.username = data.first;
+        this.cartProducts = data.cart;
+       },
+      error => { console.log("Error username"); }
+    );
 
-  catFunc( i ) {
-    this.category = i;
-  }
 
-  ngOnInit() {
-
-    this.cartProducts = JSON.parse(localStorage.getItem('cart'));
+    // if(this.username != '') {
+    //   this.cartProducts = JSON.parse(localStorage.getItem('cart'));
+    // }
+    
 }
 
   // addToCart(index){

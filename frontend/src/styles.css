@@ -2,13 +2,15 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 html,
-body {
+body{
   height: 100%;
-}
-body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif !important;
 }
+
+/* body *{
+  font-family: 'Ubuntu', sans-serif !important;
+} */
 
 .pointer {
   cursor: pointer;
@@ -37,4 +39,10 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+
+/* overides */
+.mat-toolbar, .mat-button {
+  font-family: 'Ubuntu', sans-serif !important;
 }

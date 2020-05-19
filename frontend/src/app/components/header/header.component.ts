@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user/user.service';
 import { MyserviceService } from '../../services/myservice.service';
 import { Component, OnDestroy, OnInit, Input } from "@angular/core";
 import { MediaObserver, MediaChange } from "@angular/flex-layout";
@@ -12,71 +13,64 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-	username : string = '';
+	username : string;
+	loggedIn:boolean = false;
+	listItems:any = [ {name: "Home", link: "#/home"}, {name: "Products", link: "#/products"}, {name: "About", link: "#/about"},
+	{name: "Login", link: "#/register-user"}, {name: "Cart", link: "#/cart"} ];
 
   constructor(public MediaObserver:MediaObserver
-    , private myService: MyserviceService
+	, private myService: MyserviceService
+	,private userService:UserService
     , private _router: Router) {
-		this.listItems = [
-			{
-				name: "Home",
-				link: "#/home"
-			},
-			{
-				name: "Products",
-				link: "#/products"
-      },
-			{
-				name: "About",
-				link: "#/about"
-      },
-      {
-				name: "Login",
-				link: "#/register-user"
-      },
-      {
-				name: "Cart",
-				link: "#/cart"
-			},
-		];
+
   }
 
   ngOnInit(): void {
-
-	this.listItems = [
-		{
-			name: "Home",
-			link: "#/home"
-		},
-		{
-			name: "Products",
-			link: "#/products"
-  },
-		{
-			name: "About",
-			link: "#/about"
-  },
-  {
-			name: "Login",
-			link: "#/register-user"
-  },
-  {
-			name: "Cart",
-			link: "#/cart"
-		},
-	];
+	  console.log("before:"+this.username);
+	  this.fetchData();
+	  this.fetchData();
+	  console.log("after:"+this.username);
   }
 
+  	ngOnChanges(): void {
+	  if(this.loggedIn) {
+		  this.fetchData();
+	  }
+	}
+
+	async fetchData(){
+		await this.userService.isLoggedIn()
+		.subscribe(
+			(data) =>{	this.loggedIn = data; console.log("isloggedin:"+this.loggedIn); if(!data) return },
+			(err) => { console.log("error checking logged in or not:"+err); return}
+		)
+
+		console.log("self value:"+this.loggedIn);
+		if(this.loggedIn){
+			console.log("startin gto get userr data:" + this.loggedIn);
+			this.userService.getUserData()
+			.subscribe(
+				(data) =>{	console.log(data) ;this.username = data.first;console.log("setting name to :"+this.username);	},
+				(err) => { console.log("err getting username in header:"+err) }
+
+			);
+
+			console.log("inside if login");
+		}
+	}
+	
+
   @Input() deviceXs: boolean;
-  url = "";
-  listItems: any;
+
 
   logout() {
     localStorage.removeItem('token');
-    localStorage.removeItem('userdata');
-    localStorage.removeItem('cart');
-    this._router.navigate(['/home']);
-    this.username = '';
+	localStorage.removeItem('cart');
+	this.username = '';
+	this.loggedIn = false;
+	this._router.navigate(['/home'])
+	.then( () => {location.reload();}
+	);
   }
 
 

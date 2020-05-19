@@ -122,10 +122,10 @@ export class RegisterUserComponent implements OnInit {
             localStorage.setItem('token', data['token'].toString());
             this.loginSuccessMessage = "SUCCESSFUL LOGIN :)";
             this.movetoProducts();
-            setTimeout(function(){
-              location.reload();
-              console.log("R2");
-           }, 1000);
+          //   setTimeout(function(){
+          //     location.reload();
+          //     console.log("R2");
+          //  }, 1000);
           },
           (error) => this.loginSuccessMessage = "FAILURE :(",
       );
@@ -136,12 +136,16 @@ export class RegisterUserComponent implements OnInit {
 
   movetoProducts() {
     console.log('moving to products page...');
-    this._router.navigate(['/products'], { relativeTo: this._activatedRoute });
+    this._router.navigate(['/products'], { relativeTo: this._activatedRoute })
+    .then( () => {location.reload();}
+    );
   }
 
   movetoLogin() {
     console.log('moving to login page...');
-    this._router.navigate(['/register-user'], { relativeTo: this._activatedRoute });
+    this._router.navigate(['/register-user'], { relativeTo: this._activatedRoute })
+      .then( () => {location.reload();}
+    );
   }
 
 }

@@ -17,13 +17,13 @@
         <div *ngIf="!deviceXs" class="buttons">
           <a mat-button href="{{listItems[1].link}}">Products</a>
           <a mat-button href="{{listItems[2].link}}">About</a>
-          <a *ngIf=" username == '' " mat-button href="{{listItems[3].link}}">Login</a>
-          <a *ngIf=" username != '' " mat-button href="{{listItems[0].link}}">Hey, {{username}}</a>
+          <a *ngIf="!loggedIn" mat-button href="{{listItems[3].link}}">Login</a>
+          <a *ngIf="loggedIn" mat-button href="{{listItems[0].link}}">Hey, {{ username }}</a>
         </div>
       </div>
       <div class="menu buttons" fxLayoutAlign="space-between center" >
 
-        <a *ngIf=" username != '' " class="buttons">
+        <a *ngIf="loggedIn" class="buttons">
           <button mat-button (click)="logout()" >
             <mat-icon>power_settings_new</mat-icon>
             Logout
