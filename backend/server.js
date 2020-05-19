@@ -57,7 +57,7 @@ app.use("/api/reviews",reviews_route);
 
 
 //load the angular app 
-app.get("/", (req, res) => { res.sendFile(path.join(__dirname, "/frontend/dist/flipcart-frontend/")); } );
+app.get("/", (req, res) => { res.sendFile(path.join(__dirname, "./../frontend/dist/flipcart-frontend/")); } );
 
 
 app.listen(port, () => {
